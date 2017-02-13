@@ -13,15 +13,19 @@ use DB;
 
 class CategoriaController extends Controller
 {
+    //construtor
     public function __construct()
     {
 
     }
+    //funcion index
     public function index(Request $request)
     {
         if ($request)
         {
+            //filtro de busquedas
             $query=trim($request->get('searchText'));
+            //condicion
             $categorias=DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')
             ->where ('condicion','=','1')
             ->orderBy('idcategoria','desc')
@@ -31,10 +35,12 @@ class CategoriaController extends Controller
     }
     public function create()
     {
+        //mostrar vista de crear
         return view("almacen.categoria.create");
     }
     public function store (CategoriaFormRequest $request)
     {
+        //creo objeto de validacion tipo categoria
         $categoria=new Categoria;
         $categoria->nombre=$request->get('nombre');
         $categoria->descripcion=$request->get('descripcion');

@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//ruta de categoria
 Route::resource('almacen/categoria','CategoriaController');

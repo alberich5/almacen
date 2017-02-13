@@ -23,7 +23,7 @@
 				</thead>
                @foreach ($articulos as $art)
 				<tr>
-					<td>{{ $art->idarticulo}</td>
+					<td>{{ $art->idarticulo}}</td>
 					<td>{{ $art->nombre}}</td>
 					<td>{{ $art->codigo}}</td>
 					<td>{{ $art->stock}}</td>

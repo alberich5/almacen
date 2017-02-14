@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>TimeLog - Coming Soon Template</title>
+    <title>Mantenimiento PabicAlmacen</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
@@ -41,7 +41,7 @@
 
         jQuery(document).ready(function() {         
         // cowntdown function. Set the date by modifying the date in next line (June 1, 2012 00:00:00):
-            var austDay = new Date("December 06, 2017 00:00:00");
+            var austDay = new Date("February 15, 2017 00:00:00");
                 
                 $('#countdown').countdown({
                     until: austDay, 

@@ -20,3 +20,6 @@ Route::resource('almacen/categoria','CategoriaController');
 
 //ruta de articulo
 Route::resource('almacen/articulo','ArticuloController');
+
+//ruta de centas
+Route::resource('ventas/cliente','ClienteController');

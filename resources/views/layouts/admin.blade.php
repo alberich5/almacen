@@ -27,7 +27,7 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>PA</b>b</span>
+          <span class="logo-mini"><b>PA</b>B</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>PABIC Almacen</b></span>
         </a>
@@ -85,14 +85,14 @@
             <li class="header"></li>
             
             <li class="treeview">
-              <a href="#">
+              <a href="">
                 <i class="fa fa-laptop"></i>
                 <span>Almacén</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li><a href="{{ url('/almacen/articulo') }}"><i class="fa fa-circle-o"></i> Artículos</a></li>
+                <li><a href="{{ url('/almacen/categoria') }}"><i class="fa fa-circle-o"></i> Categorías</a></li>
               </ul>
             </li>
             
@@ -129,18 +129,8 @@
                 
               </ul>
             </li>
-             <li>
-              <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-                <small class="label pull-right bg-red">PDF</small>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
-              </a>
-            </li>
+             
+           
                         
           </ul>
         </section>
@@ -193,7 +183,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0
         </div>
-        <strong>Copyright &copy; 2017 <a href="www.facebook.com/">Desarrollado por Omar Zarate</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017 <a href="">Desarrollado por Omar Zarate</a>.</strong> Todos los derechos reservados.
       </footer>
 
       

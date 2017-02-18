@@ -21,5 +21,8 @@ Route::resource('almacen/categoria','CategoriaController');
 //ruta de articulo
 Route::resource('almacen/articulo','ArticuloController');
 
-//ruta de centas
+//ruta de cliente
 Route::resource('ventas/cliente','ClienteController');
+
+//ruta del proveedor
+Route::resource('compras/proveedor','ProveedorController');

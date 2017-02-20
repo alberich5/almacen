@@ -26,3 +26,6 @@ Route::resource('ventas/cliente','ClienteController');
 
 //ruta del proveedor
 Route::resource('compras/proveedor','ProveedorController');
+
+//ruta del ingreso almacen
+Route::resource('compras/ingreso','IngresoController');

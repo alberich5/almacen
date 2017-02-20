@@ -32,11 +32,11 @@
         </div>
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     		<div class="form-group">
-            	<label>Documento</label>
+            	<label>Tipo</label>
             	<select name="tipo_documento" class="form-control">
-	            		<option value="DNI">DNI</option>
-                        <option value="RUC">RUC</option>
-                        <option value="PAS">PAS</option>
+	            		<option value="TIENDA">TIENDA</option>
+                        <option value="PERSONA">PERSONA</option>
+                        <option value="FISICA">FISICA</option>
             	</select>
             	
             </div>

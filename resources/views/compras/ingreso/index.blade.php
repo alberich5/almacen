@@ -33,7 +33,7 @@
                          <a href="" data-target="#modal-delete-{{$ing->idingreso}}" data-toggle="modal"><button class="btn btn-danger">Cancelar</button></a>
 					</td>
 				</tr>
-				@include('compras.ingresp.modal')
+				@include('compras.ingreso.modal')
 				@endforeach
 			</table>
 		</div>

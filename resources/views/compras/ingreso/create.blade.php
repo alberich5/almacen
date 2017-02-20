@@ -70,13 +70,13 @@
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
                         <label for="cantidad">Cantidad</label>
-                        <input type="number" name="pcantidad" id="pcantidad" class="form-control" placeholder="Cantidad">
+                        <input type="number" name="pcantidad" id="pcantidad" min="0" class="form-control" placeholder="Cantidad">
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
-                        <label for="precio_compra">Precio Compra</label>
-                        <input type="number" name="pprecio_compra" id="pprecio_compra" class="form-control" placeholder="Precio Compra">
+                        <label for="precio_compra">Precio Compra Unitario</label>
+                        <input type="number" name="pprecio_compra" id="pprecio_compra" min="0" class="form-control" placeholder="Precio Compra">
                     </div>
                 </div>
                 <!--
@@ -155,7 +155,7 @@
    {
         subtotal[cont]=(cantidad*precio_compra);
         total=total+subtotal[cont];
-        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" oneclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+'"></td><td><input type="number" name="precio_compra[]" value="'+precio_compra+'"></td><td>'+subtotal[cont]+'</td></tr>';
+        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+'"></td><td><input type="number" name="precio_compra[]" value="'+precio_compra+'"></td><td>'+subtotal[cont]+'</td></tr>';
         cont++;
         limpiar();
         $("#total").html("$. "+total);

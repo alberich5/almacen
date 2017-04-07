@@ -14,7 +14,7 @@
 				<thead>
 					<th>Id</th>
 					<th>Nombre</th>
-					<th>Codigo</th>
+					<th>Modelo</th>
 					<th>Categoria</th>
 					<th>Stock</th>
 					<th>Imagen</th>

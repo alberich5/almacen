@@ -32,7 +32,7 @@
     	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     		<div class="form-group">
             	<label>Tipo Comprobante</label>
-            	<select name="tipo_documento" class="form-control">
+            	<select name="tipo_comprobante" class="form-control">
 	            		<option value="Boleta">Boleta</option>
                         <option value="Factura">Factura</option>
                         <option value="Ticket">Ticket</option>
@@ -109,7 +109,7 @@
                             <th></th>
                            
 
-                            <th><h4 id="total">S/. 0.00</h4></th>
+                            <th><h4 id="total">$ 0.00</h4></th>
                         </tfoot>
                         <tbody>
                             
@@ -155,15 +155,15 @@
    {
         subtotal[cont]=(cantidad*precio_compra);
         total=total+subtotal[cont];
-        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number" name="cantidad[]" value="'+cantidad+'"></td><td><input type="number" name="precio_compra[]" value="'+precio_compra+'"></td><td>'+subtotal[cont]+'</td></tr>';
+        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number" disabled name="cantidad[]" value="'+cantidad+'"></td><td><input type="number" disabled name="precio_compra[]" value="'+precio_compra+'"></td><td>'+subtotal[cont]+'</td></tr>';
         cont++;
         limpiar();
-        $("#total").html("$. "+total);
+        $("#total").html("$"+total);
         evaluar();
         $("#detalles").append(fila);
 
    }else{
-        swal("Por favor rebice bien los campos ");
+        swal("Por favor revice bien los campos ");
    }
 
 

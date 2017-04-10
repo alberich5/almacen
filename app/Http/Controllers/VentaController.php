@@ -55,7 +55,7 @@ class VentaController extends Controller
             ->get();
         return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
-
+    //funcion de ventas
     public function store (VentaFormRequest $request)
     {
      try{

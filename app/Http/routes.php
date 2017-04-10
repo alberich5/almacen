@@ -23,7 +23,9 @@ Route::resource('compras/ingreso','IngresoController');
 
 Route::get('/home', 'HomeController@index');
 
+//Rutas para el manejo de login y usuarios
 Route::auth();
+
 Route::get('/', function () {    
 	return view('auth/login');
 });

@@ -23,3 +23,4 @@ Route::resource('compras/ingreso','IngresoController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+

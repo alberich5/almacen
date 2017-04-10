@@ -24,7 +24,7 @@ class VentaController extends Controller
     {
 
     }
-
+    //funcion principal de ventas controller
     public function index(Request $request)
     {
         if ($request)
@@ -42,7 +42,7 @@ class VentaController extends Controller
 
         }
     }
-
+    //funcion para crear nuevas ventas
      public function create()
     {
      $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();

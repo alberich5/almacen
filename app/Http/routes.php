@@ -20,7 +20,12 @@ Route::resource('compras/proveedor','ProveedorController');
 //ruta del ingreso almacen
 Route::resource('compras/ingreso','IngresoController');
 
-Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+//Rutas para el manejo de login y usuarios
+Route::auth();
+
+Route::get('/', function () {    
+	return view('auth/login');
+});

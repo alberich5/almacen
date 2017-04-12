@@ -19,11 +19,12 @@ use Illuminate\Support\Collection;
 
 class VentaController extends Controller
 {
-    
+    //funcion constructor
     public function __construct()
     {
 
     }
+
     //funcion principal de ventas controller
     public function index(Request $request)
     {
@@ -42,6 +43,7 @@ class VentaController extends Controller
 
         }
     }
+
     //funcion para crear nuevas ventas
      public function create()
     {
@@ -55,6 +57,7 @@ class VentaController extends Controller
             ->get();
         return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
+
     //funcion de ventas
     public function store (VentaFormRequest $request)
     {
@@ -101,6 +104,7 @@ class VentaController extends Controller
         return Redirect::to('ventas/venta');
     }
 
+    //funcion para mostrar las ventas
     public function show($id)
     {
      $venta=DB::table('venta as v')
@@ -118,6 +122,7 @@ class VentaController extends Controller
         return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
     }
 
+    //funcion para eliminar las categorias
     public function destroy($id)
     {
         $venta=Venta::findOrFail($id);

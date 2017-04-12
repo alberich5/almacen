@@ -14,14 +14,14 @@
 			@endif
 		</div>
 	</div>
-			
+			 
 			{!!Form::open(array('url'=>'compras/ingreso','method'=>'POST','autocomplete'=>'off'))!!}
-            {{Form::token()}}
+                {{Form::token()}}
     <div class="row">
     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     		<div class="form-group">
             	<label for="proveedor">Proveedor</label>
-                	<select name="proveedor" id="idproveedor" class="form-control selectpicker" data-live-search="true">
+                	<select name="idproveedor" id="idproveedor" class="form-control selectpicker" data-live-search="true">
                      @foreach($personas as $persona)
                      <option value="{{ $persona->idpersona}}">{{ $persona->nombre}}</option>  
                      @endforeach 
@@ -70,23 +70,23 @@
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
                         <label for="cantidad">Cantidad</label>
-                        <input type="number" name="pcantidad" id="pcantidad" min="0" class="form-control" placeholder="Cantidad">
+                        <input type="number" name="pcantidad" id="pcantidad" min="0" class="form-control" placeholder="Cantidad" >
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
                         <label for="precio_compra">Precio Compra Unitario</label>
-                        <input type="number" name="pprecio_compra" id="pprecio_compra" min="0" class="form-control" placeholder="Precio Compra">
+                        <input type="number" name="pprecio_compra" id="pprecio_compra" min="0" class="form-control" placeholder="Precio Compra" >
                     </div>
                 </div>
-                <!--
+            
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
                        <label for="precio_venta">Precio Venta</label>
                         <input type="number" name="pprecio_venta" id="pprecio_venta" class="form-control" placeholder="Precio Venta"> 
                     </div>
                 </div>
-                -->
+              
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
                        <button type="button" id="bt_add" class="btn btn-primary">Agregar Detalle</button> 
@@ -99,7 +99,7 @@
                             <th>Articulo</th>
                             <th>Cantidad</th>
                             <th>Precio Compra</th>
-                            
+                             <th>Precio Venta</th>
                             <th>Subtotal</th>
                         </thead>
                         <tfoot>
@@ -107,7 +107,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                           
+                           <th></th>
 
                             <th><h4 id="total">$ 0.00</h4></th>
                         </tfoot>
@@ -148,14 +148,14 @@
     articulo=$("#pidarticulo option:selected").text();
     cantidad=$("#pcantidad").val();
     precio_compra=$("#pprecio_compra").val();
-    
+    precio_venta=$("#pprecio_venta").val();
 
 
    if(idarticulo !="" && cantidad!="" && cantidad>0 && precio_compra!=""  )
    {
         subtotal[cont]=(cantidad*precio_compra);
         total=total+subtotal[cont];
-        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number" disabled name="cantidad[]" value="'+cantidad+'"></td><td><input type="number" disabled name="precio_compra[]" value="'+precio_compra+'"></td><td>'+subtotal[cont]+'</td></tr>';
+        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number"  name="cantidad[]" value="'+cantidad+'"></td><td><input type="number"  name="precio_compra[]" value="'+precio_compra+'"></td><td><input type="number"  name="precio_venta[]" value="'+precio_venta+'"></td><td>'+subtotal[cont]+'</td></tr>';
         cont++;
         limpiar();
         $("#total").html("$"+total);

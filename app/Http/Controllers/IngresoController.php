@@ -1,16 +1,16 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sisVentas\Http\Requests;
+use Omar\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use sisVentas\Http\Requests\IngresoFormRequest;
-use sisVentas\Ingreso;
-use sisVentas\DetalleIngreso;
+use Omar\Http\Requests\IngresoFormRequest;
+use Omar\Ingreso;
+use Omar\DetalleIngreso;
 use DB;
 
 use Carbon\Carbon;
@@ -99,6 +99,7 @@ class IngresoController extends Controller
      	   return Redirect::to('compras/ingreso'); 
 
     }
+
 
      public function show($id)
     {

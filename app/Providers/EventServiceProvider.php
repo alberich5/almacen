@@ -1,6 +1,6 @@
 <?php
 
-namespace sisVentas\Providers;
+namespace Omar\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'sisVentas\Events\SomeEvent' => [
-            'sisVentas\Listeners\EventListener',
+        'Omar\Events\SomeEvent' => [
+            'Omar\Listeners\EventListener',
         ],
     ];
 

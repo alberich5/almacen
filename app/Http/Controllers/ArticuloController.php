@@ -1,15 +1,15 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sisVentas\Http\Requests;
+use Omar\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use sisVentas\Http\Requests\ArticuloFormRequest;
-use sisVentas\Articulo;
+use Omar\Http\Requests\ArticuloFormRequest;
+use Omar\Articulo;
 use DB;
 
 class ArticuloController extends Controller

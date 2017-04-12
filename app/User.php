@@ -1,6 +1,6 @@
 <?php
 
-namespace sisVentas;
+namespace Omar;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

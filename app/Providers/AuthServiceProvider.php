@@ -1,6 +1,6 @@
 <?php
 
-namespace sisVentas\Providers;
+namespace Omar\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'sisVentas\Model' => 'sisVentas\Policies\ModelPolicy',
+        'Omar\Model' => 'Omar\Policies\ModelPolicy',
     ];
 
     /**

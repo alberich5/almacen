@@ -1,13 +1,13 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sisVentas\Http\Requests;
-use sisVentas\Persona;
+use Omar\Http\Requests;
+use Omar\Persona;
 use Illuminate\Support\Facades\Redirect;
-use sisVentas\Http\Requests\PersonaFormRequest;
+use Omar\Http\Requests\PersonaFormRequest;
 use DB;
 
 class ClienteController extends Controller

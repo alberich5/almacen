@@ -1,6 +1,6 @@
 <?php
 
-namespace sisVentas\Exceptions;
+namespace Omar\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

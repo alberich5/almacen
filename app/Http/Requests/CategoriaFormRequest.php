@@ -1,8 +1,8 @@
 <?php
 
-namespace sisVentas\Http\Requests;
+namespace Omar\Http\Requests;
 
-use sisVentas\Http\Requests\Request;
+use Omar\Http\Requests\Request;
 
 class CategoriaFormRequest extends Request
 {

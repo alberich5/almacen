@@ -1,16 +1,16 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sisVentas\Http\Requests;
+use Omar\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use sisVentas\Http\Requests\VentaFormRequest;
-use sisVentas\Venta;
-use sisVentas\DetalleVenta;
+use Omar\Http\Requests\VentaFormRequest;
+use Omar\Venta;
+use Omar\DetalleVenta;
 use DB;
 
 use Carbon\Carbon;
@@ -120,7 +120,7 @@ class VentaController extends Controller
 
     public function destroy($id)
     {
-     $venta=Venta::findOrFail($id);
+        $venta=Venta::findOrFail($id);
         $venta->Estado='C';
         $venta->update();
         return Redirect::to('ventas/venta');

@@ -1,16 +1,16 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sisVentas\Http\Requests;
+use Omar\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
-use sisVentas\Http\Requests\IngresoFormRequest;
-use sisVentas\Ingreso;
-use sisVentas\DetalleIngreso;
+use Omar\Http\Requests\IngresoFormRequest;
+use Omar\Ingreso;
+use Omar\DetalleIngreso;
 use DB;
 
 use Carbon\Carbon;
@@ -19,7 +19,7 @@ use Illuminate\Support\Collection;
 
 class IngresoController extends Controller
 {
-    //constructor
+    //constructor 
     public function __construct()
     {
 
@@ -56,12 +56,13 @@ class IngresoController extends Controller
         return view("compras.ingreso.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
 
-    //funcion que permite guaradar un proveedor
+    //funcion que permite guardar un ingreso
     public function store (IngresoFormRequest $request)
     {
-     	try {
+       
+     
      	   	 DB::beginTransaction();
-	         $ingreso=new Ingreso;
+	         $ingreso = new Ingreso;
 	         $ingreso->idproveedor=$request->get('idproveedor');
 	         $ingreso->tipo_comprobante=$request->get('tipo_comprobante');
 	         $ingreso->serie_comprobante=$request->get('serie_comprobante');
@@ -72,6 +73,7 @@ class IngresoController extends Controller
 	         $ingreso->impuesto='18';
 	         $ingreso->estado='A';
 	         $ingreso->save();
+
 
 	         $idarticulo = $request->get('idarticulo');
 	         $cantidad = $request->get('cantidad');
@@ -92,13 +94,12 @@ class IngresoController extends Controller
 	         }
 
            DB::commit();
-     	   } catch (\Exception $e) {
-     	   		DB::rollback();
-     	   	
-     	   }  
+     	     
+              
      	   return Redirect::to('compras/ingreso'); 
 
     }
+
 
      public function show($id)
     {

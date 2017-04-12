@@ -1,8 +1,8 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
-use sisVentas\Http\Requests;
+use Omar\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

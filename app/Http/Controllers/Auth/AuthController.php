@@ -1,10 +1,10 @@
 <?php
 
-namespace sisVentas\Http\Controllers\Auth;
+namespace Omar\Http\Controllers\Auth;
 
-use sisVentas\User;
+use Omar\User;
 use Validator;
-use sisVentas\Http\Controllers\Controller;
+use Omar\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

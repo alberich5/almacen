@@ -1,13 +1,13 @@
 <?php
 
-namespace sisVentas\Http\Controllers;
+namespace Omar\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use sisVentas\Http\Requests;
-use sisVentas\Categoria;
+use Omar\Http\Requests;
+use Omar\Categoria;
 use Illuminate\Support\Facades\Redirect;
-use sisVentas\Http\Requests\CategoriaFormRequest;
+use Omar\Http\Requests\CategoriaFormRequest;
 use DB;
 
 

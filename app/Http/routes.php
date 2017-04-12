@@ -21,6 +21,7 @@ Route::resource('compras/proveedor','ProveedorController');
 Route::resource('compras/ingreso','IngresoController');
 
 
+
 Route::get('/home', 'HomeController@index');
 
 //Rutas para el manejo de login y usuarios

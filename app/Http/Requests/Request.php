@@ -1,6 +1,6 @@
 <?php
 
-namespace sisVentas\Http\Requests;
+namespace Omar\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

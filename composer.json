@@ -21,7 +21,7 @@
             "database"
         ],
         "psr-4": {
-            "sisVentas\\": "app/"
+            "Omar\\": "app/"
         }
     },
     "autoload-dev": {

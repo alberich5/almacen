@@ -120,7 +120,7 @@ class VentaController extends Controller
 
     public function destroy($id)
     {
-     $venta=Venta::findOrFail($id);
+        $venta=Venta::findOrFail($id);
         $venta->Estado='C';
         $venta->update();
         return Redirect::to('ventas/venta');

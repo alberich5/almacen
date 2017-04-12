@@ -33,6 +33,8 @@ class CategoriaController extends Controller
             return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
         }
     }
+
+    //Funcion para crear una  nueva categoria
     public function create()
     {
         //mostrar vista de crear
@@ -49,14 +51,20 @@ class CategoriaController extends Controller
         return Redirect::to('almacen/categoria');
 
     }
+
+    //funcion para mostrar las categorias
     public function show($id)
     {
         return view("almacen.categoria.show",["categoria"=>Categoria::findOrFail($id)]);
     }
+
+    //funcion para editar las categorias
     public function edit($id)
     {
         return view("almacen.categoria.edit",["categoria"=>Categoria::findOrFail($id)]);
     }
+
+    //funcion para actualizar las categorias
     public function update(CategoriaFormRequest $request,$id)
     {
         $categoria=Categoria::findOrFail($id);
@@ -65,6 +73,8 @@ class CategoriaController extends Controller
         $categoria->update();
         return Redirect::to('almacen/categoria');
     }
+
+    //funcion para eliminar una categoria
     public function destroy($id)
     {
         $categoria=Categoria::findOrFail($id);

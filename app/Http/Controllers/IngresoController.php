@@ -100,7 +100,7 @@ class IngresoController extends Controller
 
     }
 
-
+    //Funcion para mostrar todos los ingresos realizados
      public function show($id)
     {
         $ingreso=DB::table('ingreso as i')

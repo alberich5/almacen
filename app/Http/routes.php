@@ -30,7 +30,7 @@ Route::get('/home', 'HomeController@index');
 Route::auth();
 
 Route::get('pdf', function () {  
-  
-	$pdf = PDF::loadView('vista');
+	$users = Omar\User::all();  
+	$pdf = PDF::loadView('vista',['users'=>$users]);
 	return $pdf->download('archivo.pdf');
 });

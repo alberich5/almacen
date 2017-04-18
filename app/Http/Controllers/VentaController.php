@@ -22,7 +22,7 @@ class VentaController extends Controller
     //funcion constructor
     public function __construct()
     {
-
+        $this->middleware('auth');
     }
 
     //funcion principal de ventas controller

@@ -1,8 +1,8 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {    
+	return view('auth/login');
 });
 
 //ruta de categoria
@@ -20,6 +20,8 @@ Route::resource('compras/proveedor','ProveedorController');
 //ruta del ingreso almacen
 Route::resource('compras/ingreso','IngresoController');
 
+//ruta de venta
+Route::resource('ventas/venta','VentaController');
 
 //ruta de hom de la apliaccion
 Route::get('/home', 'HomeController@index');
@@ -28,6 +30,3 @@ Route::get('/home', 'HomeController@index');
 Route::auth();
 
 
-Route::get('/', function () {    
-	return view('auth/login');
-});

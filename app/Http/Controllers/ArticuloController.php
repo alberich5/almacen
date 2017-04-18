@@ -17,7 +17,7 @@ class ArticuloController extends Controller
     //construtor
     public function __construct()
     {
-
+        $this->middleware('auth');
     }
     //funcion index
     public function index(Request $request)

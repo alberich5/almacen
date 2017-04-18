@@ -15,7 +15,7 @@ class ClienteController extends Controller
 	//funcion del contruxtor
      public function __construct()
     {
-
+        $this->middleware('auth');
     }
 
     //funcion del index

@@ -2,8 +2,8 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Listado de Clientes <a href="cliente/create"><button class="btn btn-success">Nuevo Cliente</button></a></h3>
-		@include('ventas.cliente.search')
+		<h3>Listado de Salidas <a href="venta/create"><button class="btn btn-success">Nuevo Salida</button></a></h3>
+		@include('ventas.venta.search')
 	</div>
 </div>
 
@@ -12,32 +12,32 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
-					<th>Nombre</th>
-					<th>Tipo de Doc.</th>
-					<th>Numero de Doc.</th>
-					<th>Telefono</th>
-					<th>Email</th>
+					<th>Fecha</th>
+					<th>Cliente</th>
+					<th>Comprobante</th>
+					<th>Impuesto</th>
+					<th>Total</th>
+					<th>Estado</th>
 					<th>Opciones</th>
 				</thead>
-               @foreach ($ventas as $per)
+               @foreach ($ventas as $ven)
 				<tr>
-					<td>{{ $per->idpersona}}</td>
-					<td>{{ $per->nombre}}</td>
-					<td>{{ $per->tipo_documento}}</td>
-					<td>{{ $per->num_documento}}</td>
-					<td>{{ $per->telefono}}</td>
-					<td>{{ $per->email}}</td>
+					<td>{{ $ven->fecha_hora}}</td>
+					<td>{{ $ven->nombre}}</td>
+					<td>{{ $ven->tipo_comprobante.': '.$ven->serie_comprobante.'-'.$ven->num_comprobante}}</td>
+					<td>{{ $ven->impuesto}}</td>
+					<td>{{ $ven->total_venta}}</td>
+					<td>{{ $ven->estado}}</td>
 					<td>
-						<a href="{{URL::action('ClienteController@edit',$per->idpersona)}}"><button class="btn btn-info">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+						<a href="{{URL::action('VentaController@show',$ven->idventa)}}"><button class="btn btn-primary">Detalle</button></a>
+                         <a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Cancelar</button></a>
 					</td>
 				</tr>
-				@include('ventas.cliente.modal')
+				@include('ventas.venta.modal')
 				@endforeach
 			</table>
 		</div>
-		{{$personas->render()}}
+		{{$ventas->render()}}
 	</div>
 </div>
 

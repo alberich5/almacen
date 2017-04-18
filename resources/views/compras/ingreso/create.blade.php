@@ -83,7 +83,7 @@
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <div class="form-group">
                        <label for="precio_venta">Precio Venta</label>
-                        <input type="number" name="pprecio_venta" id="pprecio_venta" class="form-control" placeholder="Precio Venta"> 
+                        <input type="number" name="pprecio_venta" id="pprecio_venta" class="form-control" value="0"> 
                     </div>
                 </div>
               

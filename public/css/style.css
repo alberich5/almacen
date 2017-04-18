@@ -5,7 +5,7 @@
 
 .clearfix:after {
   content: "";
-  display: table;
+  display: inline-block;
   clear: both;
 }
 
@@ -52,6 +52,7 @@ header {
 
 #details {
   margin-bottom: 50px;
+  background-color: yellow;
 }
 
 #client {
@@ -90,7 +91,7 @@ h2.name {
 
 #cabeza{
 text-align: center;
-
+background-color: gray;
  
 }
 

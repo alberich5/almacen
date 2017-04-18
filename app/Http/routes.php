@@ -31,8 +31,5 @@ Route::auth();
 
 
 
-Route::get('pdf', function () {  
-	$users = Omar\User::all();  
-	$pdf = PDF::loadView('vista',['users'=>$users]);
-	return $pdf->download('archivo.pdf');
-});
+	
+Route::get('pdf', 'PdfController@invoice');

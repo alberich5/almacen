@@ -102,7 +102,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Compras</span>
+                <span>Ingresos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -113,7 +113,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-shopping-cart"></i>
-                <span>Ventas</span>
+                <span>Salidas</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">

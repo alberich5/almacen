@@ -30,7 +30,8 @@ return [
     */
 
     'lifetime' => 120,
-
+    
+    //Estabecer cerrar sesion cuando cierre el navegador
     'expire_on_close' => false,
 
     /*

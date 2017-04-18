@@ -34,9 +34,10 @@
     		<div class="form-group">
             	<label>Documento</label>
             	<select name="tipo_documento" class="form-control">
-	            		<option value="DNI">DNI</option>
-                        <option value="RUC">RUC</option>
-                        <option value="PAS">PAS</option>
+	            		<option value="departamento">Departamento</option>
+                        <option value="tienda">Tienda</option>
+                        <option value="persona">Persona</option>
+                        <option value="vehiculo">Vehiculo</option>
             	</select>
             	
             </div>

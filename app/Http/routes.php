@@ -29,4 +29,8 @@ Route::get('/home', 'HomeController@index');
 //Rutas para el manejo de login y usuarios
 Route::auth();
 
-
+Route::get('pdf', function () {  
+  
+	$pdf = PDF::loadView('vista');
+	return $pdf->download('archivo.pdf');
+});

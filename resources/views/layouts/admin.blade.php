@@ -50,15 +50,15 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">Omar Zarate Hipolito</span>
+                  <span class="hidden-xs">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     
                     <p>
-                      www.pabic.com - Desarrollando Software
-                      <small>NubeBeta</small>
+                      www.pabicoax.com - Desarrollando Software
+                      <small>Omar Zarate</small>
                     </p>
                   </li>
                   
@@ -102,7 +102,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Ingresos</span>
+                <span>Entradas</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -184,7 +184,7 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
+          <b>Version</b> 1.3.0
         </div>
         <strong>Copyright &copy; 2017 <a href="">Desarrollado por Omar Zarate</a>.</strong> Todos los derechos reservados.
       </footer>

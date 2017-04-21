@@ -70,7 +70,7 @@ class VentaController extends Controller
          $venta->num_comprobante=$request->get('num_comprobante');
          $venta->total_venta=$request->get('total_venta');
          
-         $mytime = Carbon::now('America/Lima');
+         $mytime = Carbon::now('America/Mexico_City');
          $venta->fecha_hora=$mytime->toDateTimeString();
          $venta->impuesto='18';
          $venta->estado='A';

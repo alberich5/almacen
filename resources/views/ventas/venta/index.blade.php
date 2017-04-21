@@ -31,6 +31,7 @@
 					<td>
 						<a href="{{URL::action('VentaController@show',$ven->idventa)}}"><button class="btn btn-primary">Detalle</button></a>
                          <a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Cancelar</button></a>
+                         <a href="{{asset('php/formato1.php')}}"><button class="btn btn-success">Descargar</button></a>
 					</td>
 				</tr>
 				@include('ventas.venta.modal')

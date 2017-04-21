@@ -56,6 +56,7 @@ class VentaController extends Controller
             ->groupBy('articulo','art.idarticulo','art.stock')
             ->get();
         return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
+
     }
 
     //funcion de ventas

@@ -57,7 +57,7 @@
                   <li class="user-header">
                     
                     <p>
-                      www.pabicoax.com - Desarrollando Software
+                      www.pabicoax.com 
                       <small>Omar Zarate</small>
                     </p>
                   </li>

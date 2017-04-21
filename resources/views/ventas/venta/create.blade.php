@@ -62,7 +62,7 @@
                         <label for="">Articulo</label>
                         <select name="pidarticulo" id="pidarticulo" class="form-group selectpicker" data-live-search="true">
                             @foreach($articulos as $articulo)
-                            <option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_promedio}}">{{$articulo->articulo}}</option>
+                                <option value="{{$articulo->idarticulo}}_{{$articulo->stock}}_{{$articulo->precio_promedio}}">{{$articulo->articulo}}</option>
                             @endforeach
                         </select>
                     </div>

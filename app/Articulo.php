@@ -11,18 +11,16 @@ class Articulo extends Model
 
     
     //se defin ela llave primaria de la tabla articulo
-    protected $primaryKey='idarticulo';
+    protected $primaryKey='id_articulo';
 
     public $timestamps=false;
 
     protected $fillable =[
-    	'idcategoria',
-    	'codigo',
+        'id_categoria',
     	'nombre',
-    	'stock',
     	'descripcion',
-    	'imagen',
-    	'estado'
+    	'unidad',
+    	'precio'
     ];
 
     protected $guarded =[

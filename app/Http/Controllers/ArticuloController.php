@@ -15,10 +15,7 @@ use DB;
 class ArticuloController extends Controller
 {
     //construtor
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
     //funcion index
     public function index(Request $request)
     {
@@ -28,11 +25,10 @@ class ArticuloController extends Controller
             $query=trim($request->get('searchText'));
             //condicion
             $articulos=DB::table('articulo as a')
-            ->join('categoria as c','a.idcategoria','=','c.idcategoria')
-            ->select('a.idarticulo','a.nombre','a.codigo','a.stock','c.nombre as categoria','a.descripcion','a.imagen','a.estado')
+            ->join('categoria as c','a.id_categoria','=','c.id_categoria')
+            ->select('a.id_articulo','a.nombre','a.descripcion','a.unidad','c.nombre as categoria','a.precio')
             ->where('a.nombre','LIKE','%'.$query.'%')
-            ->orwhere('a.codigo','LIKE','%'.$query.'%')
-            ->orderBy('a.idarticulo','desc')
+            ->orderBy('a.id_articulo','desc')
             ->paginate(7);
             return view('almacen.articulo.index',["articulos"=>$articulos,"searchText"=>$query]);
         }
@@ -40,7 +36,7 @@ class ArticuloController extends Controller
     //Funcion para la vista de crear un nuevo articulo
     public function create()
     {
-    	$categorias=DB::table('categoria')->where('condicion','=','1')->get();
+    	$categorias=DB::table('categoria')->get();
         //mostrar vista de crear
         return view("almacen.articulo.create",["categorias"=>$categorias]);
     }
@@ -49,19 +45,11 @@ class ArticuloController extends Controller
     {
         //creo objeto de validacion tipo categoria
         $articulo=new Articulo;
-        $articulo->idcategoria=$request->get('idcategoria');
-        $articulo->codigo=$request->get('codigo');
+        $articulo->id_categoria=$request->get('id_categoria');
         $articulo->nombre=$request->get('nombre');
-        $articulo->stock=$request->get('stock');
         $articulo->descripcion=$request->get('descripcion');
-        $articulo->estado='Activo';
-
-        if (Input::hasFile('imagen')){
-        	$file=Input::file('imagen');
-        	$file->move(public_path().'/imagenes/articulos/',$file->getClientOriginalName());
-        		$articulo->imagen=$file->getClientOriginalName();
-        }
-
+        $articulo->unidad=$request->get('unidad');
+        $articulo->precio=$request->get('precio');
         $articulo->save();
         return Redirect::to('almacen/articulo');
 
@@ -77,7 +65,7 @@ class ArticuloController extends Controller
     public function edit($id)
     {
         $articulo=Articulo::findOrFail($id);
-        $categorias=DB::table('categoria')->where('condicion','=','1')->get();
+        $categorias=DB::table('categoria')->get();
         //retornar la vista
         return view("almacen.articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
 
@@ -87,18 +75,12 @@ class ArticuloController extends Controller
     public function update(ArticuloFormRequest $request,$id)
     {
          $articulo=Articulo::findOrFail($id);
-         $articulo->idcategoria=$request->get('idcategoria');
-         $articulo->codigo=$request->get('codigo');
+         $articulo->id_categoria=$request->get('id_categoria');
          $articulo->nombre=$request->get('nombre');
-         $articulo->stock=$request->get('stock');
          $articulo->descripcion=$request->get('descripcion');
-         $articulo->estado='Activo';
+         $articulo->precio=$request->get('precio');
 
-         if (Input::hasFile('imagen')){
-         	$file=Input::file('imagen');
-         	$file->move(public_path().'/imagenes/articulos/',$file->getClientOriginalName());
-        	$articulo->imagen=$file->getClientOriginalName();
-        }
+    
 
          $articulo->update();
          return Redirect::to('almacen/articulo');

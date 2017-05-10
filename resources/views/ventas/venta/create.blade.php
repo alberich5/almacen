@@ -183,7 +183,7 @@ function mostrarValores(){
         evaluar();
         $("#detalles").append(fila);
     }else{
-        swal("La cantidad de Producto Supera el Stock ");
+        swal("La cantidad de Producto Supera el net.Socket(options);tock ");
     }
         
 

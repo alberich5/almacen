@@ -11,6 +11,7 @@ use Omar\Http\Requests\CategoriaFormRequest;
 use DB;
 
 
+
 class CategoriaController extends Controller
 {
     //construtor
@@ -27,8 +28,7 @@ class CategoriaController extends Controller
             $query=trim($request->get('searchText'));
             //condicion
             $categorias=DB::table('categoria')->where('nombre','LIKE','%'.$query.'%')
-            ->where ('condicion','=','1')
-            ->orderBy('idcategoria','desc')
+            ->orderBy('id_categoria','desc')
             ->paginate(7);
             return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
         }
@@ -45,8 +45,6 @@ class CategoriaController extends Controller
         //creo objeto de validacion tipo categoria
         $categoria=new Categoria;
         $categoria->nombre=$request->get('nombre');
-        $categoria->descripcion=$request->get('descripcion');
-        $categoria->condicion='1';
         $categoria->save();
         return Redirect::to('almacen/categoria');
 
@@ -69,7 +67,6 @@ class CategoriaController extends Controller
     {
         $categoria=Categoria::findOrFail($id);
         $categoria->nombre=$request->get('nombre');
-        $categoria->descripcion=$request->get('descripcion');
         $categoria->update();
         return Redirect::to('almacen/categoria');
     }

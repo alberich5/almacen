@@ -11,6 +11,18 @@ Route::resource('almacen/categoria','CategoriaController');
 //ruta de articulo
 Route::resource('almacen/articulo','ArticuloController');
 
+//ruta de movimiento
+Route::resource('almacen/movimiento','MovimientoController');
+//ruta de movimiento
+Route::resource('reporte/ver','ReporteController');
+
+
+
+
+
+
+
+
 //ruta de cliente
 Route::resource('ventas/cliente','ClienteController');
 

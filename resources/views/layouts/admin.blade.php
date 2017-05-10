@@ -94,32 +94,19 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/almacen/articulo') }}"><i class="fa fa-circle-o"></i> Papeleria</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Refacciones</a></li>
-                <li><a href="{{ url('/almacen/categoria') }}"><i class="fa fa-circle-o"></i> Categorías</a></li>
+                <li><a href="{{ url('/almacen/articulo') }}"><i class="fa fa-circle-o"></i> Ingresar Articulo</a></li>
+                <li><a href="{{ url('/almacen/categoria') }}"><i class="fa fa-circle-o"></i> Ingresar Categoría</a></li>
               </ul>
             </li>
             
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Entradas</span>
+                <span>Movimientos</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/compras/ingreso') }}"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="{{ url('/compras/proveedor') }}"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Salidas</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{ url('/ventas/venta') }}"><i class="fa fa-circle-o"></i> Salida</a></li>
-                <li><a href="{{ url('/ventas/cliente') }}"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                <li><a href="{{ url('/almacen/movimiento') }}"><i class="fa fa-circle-o"></i> Crear Movimiento</a></li>
               </ul>
             </li>
                        
@@ -139,7 +126,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{asset('')}}"><i class="fa fa-circle-o"></i> De clientes</a></li>
+                <li><a href="{{asset('/reporte/ver')}}"><i class="fa fa-circle-o"></i>Ver</a></li>
                 
               </ul>
             </li>
@@ -165,7 +152,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border" style="background-color: #EFFBFF">
-                  <center><h3 class="box-title " >SISTEMA DE ALMACEN</h3></center>
+                  <center><h3 class="box-title " >SISTEMA DE ALMACEN  <?php echo date("j, n, Y");?> </h3></center>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -212,3 +199,5 @@
     
   </body>
 </html>
+
+

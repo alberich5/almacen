@@ -22,19 +22,19 @@
             </div>
             <div class="form-group">
                         <label for="">Articulo</label>
-                        <select name="id_articulo"  class="form-group selectpicker" data-live-search="true">
+                        <select name="id_articulo"  class="form-group selectpicker" id="pidarticulo" data-live-search="true">
                             @foreach($articulos as $articulo)
-                            <option value="{{$articulo->id_articulo}}">{{$articulo->nombre}}</option>
+                            <option value="{{$articulo->id_articulo}}_{{$articulo->cantidad}}">{{$articulo->nombre}}</option>
                             @endforeach
                         </select>
             </div>
             <div class="form-group">
             	<label for="cantidad">Cantidad</label>
-            	<input type="text" name="cantidad" class="form-control" placeholder="Cantidad de material...">
+            	<input type="text" name="cantidad"  class="form-control" placeholder="Cantidad de material...">
             </div>
             <div class="form-group">
-            	<label for="disponible">Disponible</label>
-            	<input type="text" name="disponible" class="form-control" value="10">
+            	<label for="disponible">Disponible en Almacen</label>
+            	<input type="text" name="disponible" disabled id="pstock" class="form-control" placeholder="stock">
             </div>
              <div class="form-group">
             	<button class="btn btn-primary" type="submit">Guardar</button>
@@ -43,4 +43,28 @@
             
 		</div>
 	</div>
+
+
+@push('scripts')
+<script>
+    $(document).ready(function(){
+    $('#bt_add').click(function(){
+      agregar();
+    });
+  });
+
+
+  $("#pidarticulo").change(mostrarvalores);
+
+  function mostrarvalores(){
+    datosArticulo=document.getElementById('pidarticulo').value.split('_');
+     $("#pstock").val(datosArticulo[1]);
+  }
+
+
+</script>
+@endpush
+
+
 @endsection
+

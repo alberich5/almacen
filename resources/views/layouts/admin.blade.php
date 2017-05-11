@@ -96,6 +96,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('/almacen/articulo') }}"><i class="fa fa-circle-o"></i> Ingresar Articulo</a></li>
                 <li><a href="{{ url('/almacen/categoria') }}"><i class="fa fa-circle-o"></i> Ingresar Categoría</a></li>
+                <li><a href="{{ url('/almacen/inventario/create') }}"><i class="fa fa-circle-o"></i> LLenar Inventario Inicial</a></li>
               </ul>
             </li>
             
@@ -152,7 +153,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border" style="background-color: #EFFBFF">
-                  <center><h3 class="box-title " >SISTEMA DE ALMACEN  <?php echo date("j, n, Y");?> </h3></center>
+                  <center><h3 class="box-title " >SISTEMA DE ALMACEN</h3></center>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     

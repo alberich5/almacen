@@ -35,12 +35,14 @@ class MovimientoController extends Controller
 
      public function create()
     {
-    	$articulos=DB::table('articulo')->get();
+    	$articulos=DB::table('articulo as a')
+        ->join('stock as s','a.id_articulo','=','s.id_articulo')
+        ->select('a.id_articulo','a.nombre','a.descripcion','a.unidad','a.precio','s.cantidad')
+        ->get();
     	$stock=DB::table('stock as s')
     	->join('articulo as a','s.id_articulo','=','a.id_articulo')
     	->select('s.cantidad')
     	->get();
-
     	//mostrar vista de crear
         return view("almacen.movimiento.create",["articulos"=>$articulos,"stock"=>$stock]);
     }

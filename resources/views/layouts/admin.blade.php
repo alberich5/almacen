@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('css/sweetalert.css')}}">
+
+     <link rel="stylesheet" href="{{asset('css/flipclock.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
@@ -28,7 +30,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ url('/almacen/movimiento') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>PA</b>B</span>
           <!-- logo for regular state and mobile devices -->
@@ -97,6 +99,7 @@
                 <li><a href="{{ url('/almacen/articulo') }}"><i class="fa fa-circle-o"></i> Ingresar Articulo</a></li>
                 <li><a href="{{ url('/almacen/categoria') }}"><i class="fa fa-circle-o"></i> Ingresar Categoría</a></li>
                 <li><a href="{{ url('/almacen/inventario/create') }}"><i class="fa fa-circle-o"></i> LLenar Inventario Inicial</a></li>
+                <li><a href="{{ url('/almacen/cliente') }}"><i class="fa fa-circle-o"></i> Agregar Cliente</a></li>
               </ul>
             </li>
             
@@ -154,6 +157,7 @@
               <div class="box">
                 <div class="box-header with-border" style="background-color: #EFFBFF">
                   <center><h3 class="box-title " >SISTEMA DE ALMACEN</h3></center>
+
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -165,6 +169,8 @@
                   	<div class="row">
 	                  	<div class="col-md-12">
 		                          <!--Contenido-->
+
+
                               @yield('contenido')
 		                          <!--Fin Contenido-->
                            </div>
@@ -192,11 +198,13 @@
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     @stack('scripts')
     <!-- Bootstrap 3.3.5 -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-select.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
+    <script src="{{asset('js/flipclock.js')}}"></script>
     
   </body>
 </html>

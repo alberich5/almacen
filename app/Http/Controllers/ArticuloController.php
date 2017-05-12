@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Omar\Http\Requests\ArticuloFormRequest;
 use Omar\Articulo;
+use Omar\Stock;
 use DB;
 
 class ArticuloController extends Controller
@@ -79,10 +80,11 @@ class ArticuloController extends Controller
          $articulo->nombre=$request->get('nombre');
          $articulo->descripcion=$request->get('descripcion');
          $articulo->precio=$request->get('precio');
+         $articulo->update();
 
     
 
-         $articulo->update();
+         
          return Redirect::to('almacen/articulo');
     }
 

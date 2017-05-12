@@ -21,6 +21,14 @@
                                              'SALIDA' => 'SALIDA'],null,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
+                        <label for="">Clientes<label>
+                        <select name="id_cliente"   class="form-group selectpicker" data-live-search="true">
+                            @foreach($cliente as $cli)
+                            <option value="{{$cli->id_cliente}}">{{$cli->nombre_c}}</option>
+                            @endforeach
+                        </select>
+            </div>
+            <div class="form-group">
                         <label for="">Articulo</label>
                         <select name="id_articulo"  class="form-group selectpicker" id="pidarticulo" data-live-search="true">
                             @foreach($articulos as $articulo)
@@ -31,7 +39,11 @@
             <div class="form-group">
             	<label for="cantidad">Cantidad</label>
             	<input type="text" name="cantidad"  class="form-control" placeholder="Cantidad de material...">
+
             </div>
+             @foreach($user as $u)
+                    <input type="hidden" name="user"  class="form-control" value="{{$u->id}}">        
+            @endforeach
             <div class="form-group">
             	<label for="disponible">Disponible en Almacen</label>
             	<input type="text" name="disponible" disabled id="pstock" class="form-control" placeholder="stock">

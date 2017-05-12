@@ -16,6 +16,9 @@ Route::resource('almacen/inventario','InventarioController');
 
 //ruta de movimiento
 Route::resource('almacen/movimiento','MovimientoController');
+
+//ruta de movimiento
+Route::resource('almacen/cliente','ClienteController');
 //ruta de movimiento
 Route::resource('reporte/ver','ReporteController');
 
@@ -27,8 +30,7 @@ Route::resource('excel','ExcelController');
 
 
 
-//ruta de cliente
-Route::resource('ventas/cliente','ClienteController');
+
 
 //ruta del proveedor
 Route::resource('compras/proveedor','ProveedorController');

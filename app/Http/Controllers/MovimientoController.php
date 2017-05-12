@@ -27,7 +27,8 @@ class MovimientoController extends Controller
     {
     	$movimientos=DB::table('Movimiento as m')
             ->join('articulo as a','m.id_articulo','=','a.id_articulo')
-            ->select('m.id_movimiento','m.cantidad','m.tipo','a.nombre','m.fecha')
+            ->join('cliente as c','m.id_cliente','=','c.id_cliente')
+            ->select('m.id_movimiento','m.cantidad','m.tipo','a.nombre','a.unidad','c.nombre_c','m.fecha')
             ->orderBy('m.id_movimiento','desc')
             ->paginate(7);
         return view('almacen.movimiento.index',["movimientos"=>$movimientos]);
@@ -43,8 +44,10 @@ class MovimientoController extends Controller
     	->join('articulo as a','s.id_articulo','=','a.id_articulo')
     	->select('s.cantidad')
     	->get();
+        $cliente=DB::table('cliente')->get();
+        $user=DB::table('users')->get();
     	//mostrar vista de crear
-        return view("almacen.movimiento.create",["articulos"=>$articulos,"stock"=>$stock]);
+        return view("almacen.movimiento.create",["articulos"=>$articulos,"stock"=>$stock,"cliente"=>$cliente,"user"=>$user]);
     }
 
      //funcion para insertar un nuevo articulo
@@ -55,6 +58,7 @@ class MovimientoController extends Controller
         $movimiento->id_articulo=$request->get('id_articulo');
         $movimiento->cantidad=$request->get('cantidad');
         $movimiento->tipo=$request->get('tipo');
+        $movimiento->id_cliente=$request->get('id_cliente');
         $movimiento->save();
         return Redirect::to('almacen/movimiento');
 

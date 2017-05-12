@@ -25,7 +25,8 @@ Route::resource('reporte/ver','ReporteController');
 
 
 
-Route::resource('excel','ExcelController');
+Route::get('/excel','ExcelController@index');
+Route::get('/mes','ExcelController@mes');
 
 
 

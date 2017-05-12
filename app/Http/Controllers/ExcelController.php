@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Omar\Http\Requests;
 
 use Omar\Articulo;
+use Omar\Movimiento;
 use Omar\User;
 use DB;
 
@@ -23,47 +24,35 @@ class ExcelController extends Controller
  public function index()
  {
  
-        Excel::create('Lista de Articulos', function($excel) {
+       Excel::create('Articulos', function($excel) {
+ 
+            $excel->sheet('Articulos', function($sheet) {
+ 
+                $products = Articulo::all();
+ 
+                $sheet->fromArray($products);
+ 
+            });
+        })->download('xls');
+ 
+ }
+ public function mes()
+ {
+ 
+       Excel::create('Movimientos', function($excel) {
+ 
+            $excel->sheet('Movimientos', function($sheet) {
+ 
+                $movimientos=DB::table('Movimiento as m')
+            ->join('articulo as a','m.id_articulo','=','a.id_articulo')
+            ->join('cliente as c','m.id_cliente','=','c.id_cliente')
+            ->select('m.id_movimiento','m.cantidad','m.tipo','a.nombre','a.unidad','c.nombre_c','m.fecha')
+            ->orderBy('m.id_movimiento','desc')->get();
+ 
 
-            $excel->sheet('Sheetname', function ($sheet) {
-
-        // first row styling and writing content
-        $sheet->mergeCells('A1:W1');
-        $sheet->row(1, function ($row) {
-            $row->setFontFamily('Comic Sans MS');
-            $row->setFontSize(30);
-        });
-
-        $sheet->row(1, array('Listado de Articulos'));
-
-        // second row styling and writing content
-        $sheet->row(2, function ($row) {
-
-            // call cell manipulation methods
-            $row->setFontFamily('Comic Sans MS');
-            $row->setFontSize(15);
-            $row->setFontWeight('bold');
-
-        });
-
-        $sheet->row(2, array('Total de articulos'));
-
-        // getting data to display - in my case only one record
-        $articulo = User::get()->toArray();
-
-        // setting column names for data - you can of course set it manually
-        $sheet->appendRow(array_keys($articulo[0])); // column names
-
-        // getting last row number (the one we already filled and setting it to bold
-        $sheet->row($sheet->getHighestRow(), function ($row) {
-            $row->setFontWeight('bold');
-        });
-
-        // putting users data as next rows
-        foreach ($articulo as $art) {
-            $sheet->appendRow($art);
-        }
-    });
+                $sheet->fromArray($movimientos);
+ 
+            });
         })->export('xls');
  
  }

@@ -136,6 +136,7 @@
            
                         
           </ul>
+
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -155,7 +156,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border" style="background-color: #EFFBFF">
-                  <center><h2 ><?php echo date("m/d/y");?></h2></center>
+                  
 
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -189,7 +190,12 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 1.3.0
         </div>
-        <strong>Copyright &copy; 2017 <a href="">Desarrollado por Omar Zarate</a>.</strong> Todos los derechos reservados.
+        <center><a href="https://time.is/Mexico" id="time_is_link" rel="nofollow" style="font-size:36px"</a>
+        <span id="Mexico_z159" style="font-size:36px"></span>
+        <script src="//widget.time.is/t.js"></script>
+        <script>
+        time_is_widget.init({Mexico_z159:{}});
+        </script></center>
       </footer>
 
       

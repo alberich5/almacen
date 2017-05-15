@@ -30,7 +30,7 @@
 					<td>{{ $art->precio}}</td>
 					<td>
 						<a href="{{URL::action('ArticuloController@edit',$art->id_articulo)}}"><button class="btn btn-info">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$art->id_articulo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+                         
 					</td>
 				</tr>
 				@include('almacen.articulo.modal')

@@ -52,7 +52,19 @@ class ArticuloController extends Controller
         $articulo->unidad=$request->get('unidad');
         $articulo->precio=$request->get('precio');
         $articulo->save();
+
+ $id=DB::table('articulo')
+            ->select('id_articulo','nombre','descripcion')
+            ->orderBy('id_articulo','desc')->take(1)->get();
+
+
+    $stock=new Stock;
+    $stock->id_articulo=$id[0]->id_articulo;
+    $stock->cantidad=$request->get('stock');
+    $stock->save();
+
         return Redirect::to('almacen/articulo');
+        
 
     }
 

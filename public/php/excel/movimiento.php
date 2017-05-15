@@ -2,13 +2,15 @@
 	//Incluimos librería y archivo de conexión
 	require 'Classes/PHPExcel.php';
 	require 'conexion.php';
+
+	$fecha= $_GET["fecha"];
 	
 	//Consulta
-	$sql = "SELECT m.id_movimiento, a.nombre, a.precio, m.cantidad FROM movimiento AS m, articulo AS a WHERE m.id_articulo = a.id_articulo";
+	$sql = "SELECT m.id_movimiento, a.nombre, a.precio, m.cantidad FROM movimiento AS m, articulo AS a WHERE m.id_articulo = a.id_articulo AND DATE(m.fecha) = '".$fecha."'";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
-	$gdImage = imagecreatefrompng('images/logo.png');//Logotipo
+	$gdImage = imagecreatefrompng('images/logito.png');//Logotipo
 	
 	//Objeto de PHPExcel
 	$objPHPExcel  = new PHPExcel();
@@ -101,18 +103,18 @@
 	$objPHPExcel->getActiveSheet()->getStyle('A1:E4')->applyFromArray($estiloTituloReporte);
 	$objPHPExcel->getActiveSheet()->getStyle('A6:E6')->applyFromArray($estiloTituloColumnas);
 	
-	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE Movimientos');
+	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE MOVIMIENTOS');
 	$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
 	
 	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
 	$objPHPExcel->getActiveSheet()->setCellValue('A6', 'ID');
 	$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
 	$objPHPExcel->getActiveSheet()->setCellValue('B6', 'NOMBRE');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(10);
+	$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
 	$objPHPExcel->getActiveSheet()->setCellValue('C6', 'PRECIO');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(10);
-	$objPHPExcel->getActiveSheet()->setCellValue('D6', 'EXISTENCIA');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(10);
+	$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+	$objPHPExcel->getActiveSheet()->setCellValue('D6', 'CANTIDAD');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
 	$objPHPExcel->getActiveSheet()->setCellValue('E6', 'TOTAL');
 	
 	//Recorremos los resultados de la consulta y los imprimimos

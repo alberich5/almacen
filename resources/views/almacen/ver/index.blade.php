@@ -2,14 +2,36 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Descargar los articulo <a href="{{ url('/excel') }}"><button class="btn btn-success">Descargar</button></a></h3>	
-
+		<form action="{{asset('php/excel/copia.php')}}" method="get" accept-charset="utf-8">
+		<label>Articulos por dia</label><br>
+				<input type="date" name="fecha" value="">
+				<input type="submit" name="" value="Descargar" class="btn btn-primary">
+				
+		</form>	
 	</div>
+</div>
+<div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Ver reporte de Movimientos <a href="http://172.16.0.203/crudomar/public/php/excel/movimiento.php"><button class="btn btn-success">Descargar</button></a></h3>	
+		<form action="{{asset('php/excel/movimiento.php')}}" method="get" accept-charset="utf-8">
+		<label>Movientos por dia</label><br>
+				<input type="date" name="fecha">
+				<input type="submit" name="" value="Descargar" class="btn btn-primary">
+				
+		</form>	
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		<form action="{{asset('php/excel/kardes.php')}}" method="get" accept-charset="utf-8">
+		<label>kardes del mes</label><br>
+				<input type="date" name="fecha1" value="">
+				<input type="date" name="fecha1" value="">
+				<input type="submit" name="" value="Descargar" class="btn btn-primary">
+				
+		</form>	
+	</div>
+</div>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="table-responsive">
@@ -17,5 +39,6 @@
 		</div>
 	</div>
 </div>
+
 
 @endsection

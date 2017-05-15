@@ -2,9 +2,13 @@
 	//Incluimos librería y archivo de conexión
 	require 'Classes/PHPExcel.php';
 	require 'conexion.php';
+
+	$fecha= $_GET["fecha"];
 	
 	//Consulta
-	$sql = "SELECT count(m.tipo) as conta, a.nombre, a.unidad, m.tipo FROM movimiento AS m, articulo AS a WHERE m.id_articulo = a.id_articulo group by a.id_articulo,m.tipo";
+	$sql = "SELECT count(m.tipo) as contador, a.nombre, a.unidad, m.tipo FROM movimiento AS m, articulo AS a
+WHERE m.id_articulo = a.id_articulo AND DATE(m.fecha) = '".$fecha."'
+group by a.id_articulo,m.tipo";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
@@ -14,11 +18,11 @@
 	$objPHPExcel  = new PHPExcel();
 	
 	//Propiedades de Documento
-	$objPHPExcel->getProperties()->setCreator("Omar zarate")->setDescription("MOVIMIENTOS DEL DIA");
+	$objPHPExcel->getProperties()->setCreator("Omar Zarate")->setDescription("Reporte de movimientos");
 	
 	//Establecemos la pestaña activa y nombre a la pestaña
 	$objPHPExcel->setActiveSheetIndex(0);
-	$objPHPExcel->getActiveSheet()->setTitle("Dia");
+	$objPHPExcel->getActiveSheet()->setTitle("Movimiento");
 	
 	$objDrawing = new PHPExcel_Worksheet_MemoryDrawing();
 	$objDrawing->setName('Logotipo');
@@ -99,19 +103,20 @@
 	));
 	
 	$objPHPExcel->getActiveSheet()->getStyle('A1:E4')->applyFromArray($estiloTituloReporte);
-	$objPHPExcel->getActiveSheet()->getStyle('A6:E6')->applyFromArray($estiloTituloColumnas);
+	$objPHPExcel->getActiveSheet()->getStyle('A6:D6')->applyFromArray($estiloTituloColumnas);
 	
-	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DEL DIA');
+	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE ARTICULOS');
 	$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
 	
-	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(45);
 	$objPHPExcel->getActiveSheet()->setCellValue('A6', 'NOMBRE');
 	$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
 	$objPHPExcel->getActiveSheet()->setCellValue('B6', 'UNIDAD');
 	$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
 	$objPHPExcel->getActiveSheet()->setCellValue('C6', 'TIPO');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
-	$objPHPExcel->getActiveSheet()->setCellValue('D6', 'TOTAL');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(30);
+	$objPHPExcel->getActiveSheet()->setCellValue('D6', 'TOTAL DE VECES');
+
 	
 	//Recorremos los resultados de la consulta y los imprimimos
 	while($rows = $resultado->fetch_assoc()){
@@ -119,9 +124,7 @@
 		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['nombre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['unidad']);
 		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['tipo']);
-		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['conta']);
-		
-
+		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['contador']);
 		
 		$fila++; //Sumamos 1 para pasar a la siguiente fila
 	}
@@ -176,7 +179,7 @@
 	
 	
 	header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-	header('Content-Disposition: attachment;filename="DIA.xlsx"');
+	header('Content-Disposition: attachment;filename="articulo.xlsx"');
 	header('Cache-Control: max-age=0');
 	
 	$writer->save('php://output');

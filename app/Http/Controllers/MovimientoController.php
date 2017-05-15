@@ -25,13 +25,14 @@ class MovimientoController extends Controller
     //funcion index
     public function index(Request $request)
     {
+        $query=trim($request->get('searchText'));
     	$movimientos=DB::table('Movimiento as m')
             ->join('articulo as a','m.id_articulo','=','a.id_articulo')
             ->join('cliente as c','m.id_cliente','=','c.id_cliente')
             ->select('m.id_movimiento','m.cantidad','m.tipo','a.nombre','a.unidad','c.nombre_c','m.fecha')
             ->orderBy('m.id_movimiento','desc')
-            ->paginate(7);
-        return view('almacen.movimiento.index',["movimientos"=>$movimientos]);
+            ->paginate(10);
+        return view('almacen.movimiento.index',["movimientos"=>$movimientos,"searchText"=>$query]);
     }
 
      public function create()

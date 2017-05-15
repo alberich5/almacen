@@ -12,6 +12,7 @@ $templateWord = new TemplateProcessor('formato1.docx');
 	
 $nombre = $_GET['nom'];
 $cantidad = $_GET['cant'];
+$area = $_GET['cli'];
 $unidad = $_GET['uni'];
 $dia=date('d');
 $mes=date('m');
@@ -22,6 +23,7 @@ $ano=date('y');
 
 // --- Asignamos valores a la plantilla
 $templateWord->setValue('articulo',$nombre);
+$templateWord->setValue('area',$area);
 $templateWord->setValue('cant',$cantidad);
 $templateWord->setValue('unidad',$unidad);
 $templateWord->setValue('dia',$dia);
@@ -31,11 +33,11 @@ $templateWord->setValue('ano',$ano);
 
 
 // --- Guardamos el documento
-$templateWord->saveAs('mante/hola.docx');
+$templateWord->saveAs('mante/descarga.docx');
 
-header("Content-Disposition: attachment; filename=hola.docx; charset=iso-8859-1");
+header("Content-Disposition: attachment; filename=descarga.docx; charset=iso-8859-1");
 
-echo file_get_contents('mante/hola.docx');
+echo file_get_contents('mante/descarga.docx');
 
 
         

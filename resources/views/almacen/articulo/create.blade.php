@@ -72,6 +72,12 @@
             	<input type="text" name="precio"  value="{{old('precio')}}" class="form-control" placeholder="Precio del Articulo...">
             </div>
     	</div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label for="descripcion">Stock Inicial</label>
+                <input type="number" name="stock"  value="{{old('stock')}}" class="form-control" placeholder="Stock inicial del Articulo" required="" min="0">
+            </div>
+        </div>
     	
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     		<div class="form-group">

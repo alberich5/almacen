@@ -4,9 +4,16 @@
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Listado de Movimiento <a href="movimiento/create"><button class="btn btn-success">Nuevo Movimiento</button></a></h3>
 		@include('almacen.movimiento.search')
+		
 	</div>
 </div>
-
+<div id="mover">
+<form action="{{asset('php/excel/copia.php')}}" method="get" accept-charset="utf-8">
+	<input type="hidden" name="fecha" value="<?php echo date("Y-m-d"); ?>">
+	<i class="fa fa-download" aria-hidden="true"><input type="submit" name="" value="excel" class=" btn btn-info"></i>
+</form>
+			
+</div>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="table-responsive">
@@ -29,13 +36,14 @@
 					<td>Omar</td>
 					<td>{{ $mov->fecha}}</td>
 					<td>
-						<a href="http://172.16.0.203/crudomar/public/php/formato1.php?nom={{ $mov->nombre}}&cant={{ $mov->cantidad}}&uni={{ $mov->unidad}}"><button class="btn btn-primary">Descargar</button></a>
+						<a href="http://172.16.0.203/crudomar/public/php/formato1.php?nom={{ $mov->nombre}}&cant={{ $mov->cantidad}}&uni={{ $mov->unidad}}&cli={{ $mov->nombre_c}}"><button class="btn btn-primary">Descargar</button></a>
 					</td>
 				</tr>
 				@include('almacen.movimiento.modal')
 				@endforeach
 			</table>
 		</div>
+		{{$movimientos->render()}}
 	</div>
 </div>
 

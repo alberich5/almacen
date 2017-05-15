@@ -17,8 +17,8 @@
             {{Form::token()}}
             <div class="form-group">
             	<label for="nombre">Tipo Movimiento</label>
-            	{!! Form::select('tipo', ['ENTRADA' => 'ENTRADA',
-                                             'SALIDA' => 'SALIDA'],null,['class'=>'form-control']) !!}
+            	{!! Form::select('tipo', ['SALIDA' => 'SALIDA',
+                                             'ENTRADA' => 'ENTRADA'],null,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">
                         <label for="">Clientes<label>

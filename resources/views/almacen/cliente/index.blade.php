@@ -22,7 +22,6 @@
 					<td>{{ $cli->nombre_c}}</td>
 					<td>
 						<a href="{{URL::action('ClienteController@edit',$cli->id_cliente)}}"><button class="btn btn-info">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$cli->id_cliente}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
 				@include('almacen.cliente.modal')

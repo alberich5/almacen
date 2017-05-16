@@ -13,16 +13,18 @@ group by a.id_articulo,m.tipo";
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
 	$gdImage = imagecreatefrompng('images/logito.png');//Logotipo
+
+	$imprimir= date('d-m-Y');
 	
 	//Objeto de PHPExcel
 	$objPHPExcel  = new PHPExcel();
 	
 	//Propiedades de Documento
-	$objPHPExcel->getProperties()->setCreator("Omar Zarate")->setDescription("Reporte de movimientos");
+	$objPHPExcel->getProperties()->setCreator("Omar Zarate")->setDescription("Reporte de articulos");
 	
 	//Establecemos la pestaña activa y nombre a la pestaña
 	$objPHPExcel->setActiveSheetIndex(0);
-	$objPHPExcel->getActiveSheet()->setTitle("Movimiento");
+	$objPHPExcel->getActiveSheet()->setTitle("Articulos");
 	
 	$objDrawing = new PHPExcel_Worksheet_MemoryDrawing();
 	$objDrawing->setName('Logotipo');
@@ -105,7 +107,7 @@ group by a.id_articulo,m.tipo";
 	$objPHPExcel->getActiveSheet()->getStyle('A1:E4')->applyFromArray($estiloTituloReporte);
 	$objPHPExcel->getActiveSheet()->getStyle('A6:D6')->applyFromArray($estiloTituloColumnas);
 	
-	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE ARTICULOS');
+	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'REPORTE DE ARTICULOS '.$imprimir);
 	$objPHPExcel->getActiveSheet()->mergeCells('B3:D3');
 	
 	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(45);

@@ -6,7 +6,11 @@
 
 	
 	//Consulta
-	$sql = "SELECT  * from articulo AS a, stock AS s where a.id_articulo = s.id_articulo";
+	$sql = "SELECT a.id_articulo,a.nombre, a.unidad, a.precio,count(m.tipo) AS salida, m.tipo , s.cantidad FROM articulo AS a
+	inner JOIN stock as s on a.id_articulo=s.id_articulo
+	inner join movimiento as m on a.id_articulo=m.id_articulo
+	WHERE s.id_articulo = a.id_articulo and DATE(s.fecha) BETWEEN '2017-05-11'  AND '2017-05-15' AND m.tipo='SALIDA'
+	group by a.id_articulo,m.tipo;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
@@ -132,9 +136,9 @@
 		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['precio']);
 		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['cantidad']);
 		$objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, '=C'.$fila.'*D'.$fila);
+		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, $rows['salida']);
+		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, $rows['cantidad']);
+		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, '=C'.$fila.'*F'.$fila);
 		
 
 		

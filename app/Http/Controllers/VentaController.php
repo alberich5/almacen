@@ -117,6 +117,14 @@ class VentaController extends Controller
              ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta','a.unidad')
              ->where('d.idventa','=',$id)
              ->get();
+            $cadena="";
+        foreach ($detalles as $det) {
+            $cadena="nom=".$det->articulo."&cantidad=".$det->cantidad."uni=".$det->unidad;
+            dd($cadena);
+        }
+
+  
+       
         return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
     }
 

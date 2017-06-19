@@ -30,7 +30,7 @@
                <p>{{ $venta->num_comprobante}}</p>
             </div>
         </div>
-    	
+
     </div>
     <div class="row">
     	<div class="panel panel-primary">
@@ -43,7 +43,6 @@
                             <th>Cantidad</th>
                             <th>Precio Salida</th>
                             <th>Subtotal</th>
-                            <th>Descargar</th>
                         </thead>
                         <tfoot>
                            
@@ -62,7 +61,7 @@
                                     <td>{{$det->cantidad}}</td>
                                     <td>{{$det->precio_venta}}</td>
                                     <td>{{$det->cantidad*$det->precio_venta}}</td>
-                                    <td><a href="http://localhost/crudLaravel/public/php/formato1.php?nom={{$det->articulo}}&cant={{$det->cantidad}}&uni={{$det->unidad}}&cli={{ $venta->nombre}}"><button class="btn btn-success">Descargar</button></a></td>
+                                    
                                 </tr>
                             @endforeach
                         </tbody>
@@ -75,6 +74,7 @@
     		<div class="form-group">
                     <input name="_token" value="{{ csrf_token() }}" type="hidden"></input>
             	<button class="btn btn-primary" type="submit">Guardar</button>
+                <td><a href="http://localhost/crudLaravel/public/php/formato1.php?{{$cadena}}"><button class="btn btn-success">Descargar</button></a></td>
             	<button class="btn btn-danger" type="reset">Cancelar</button>
             </div>
     	</div>

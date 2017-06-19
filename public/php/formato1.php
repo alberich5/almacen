@@ -9,34 +9,15 @@ use PhpOffice\PhpWord\TemplateProcessor;
 
 $templateWord = new TemplateProcessor('formato1.docx');
 //variables captadas desde el formulario de index
-	
-$nombre = $_GET['nom'];
-$cantidad = $_GET['cant'];
-$area = $_GET['cli'];
-$unidad = $_GET['uni'];
+$total = $_GET['total'];
 
-$dia=date('d');
-$mes=date('m');
-$ano=date('y');
+//se recorre toda la cadena para imprimir los articulos que se compraron
+$var="";
+for ($i=0; $i <$total ; $i++) { 
+	$var.=$_GET['nom'.$i.'']."-";
+}
 
-
-// --- Asignamos valores a la plantilla
-$templateWord->setValue('articulo',$nombre);
-$templateWord->setValue('area',$area);
-$templateWord->setValue('cant',$cantidad);
-$templateWord->setValue('unidad',$unidad);
-$templateWord->setValue('dia',$dia);
-$templateWord->setValue('mes',$mes);
-$templateWord->setValue('ano',$ano);
-
-
-$tim =time();
-// --- Guardamos el documento
-$templateWord->saveAs('mante/descarga'.$tim.'.docx');
-
-header("Content-Disposition: attachment; filename=descarga".$tim.".docx; charset=iso-8859-1");
-
-echo file_get_contents('mante/descarga'.$tim.'.docx');
+echo $var;
 
 
         

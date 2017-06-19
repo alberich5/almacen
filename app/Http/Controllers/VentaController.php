@@ -117,16 +117,15 @@ class VentaController extends Controller
              ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta','a.unidad')
              ->where('d.idventa','=',$id)
              ->get();
-            $cadena="";
-            
-        foreach ($detalles as $det) {
-            $cadena="nom=".$det->articulo."&cantidad=".$det->cantidad."uni=".$det->unidad;
-            
-        }
-
-  
-       
-        return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
+             //traer el tamaño del arrelo
+             $conte=count($detalles);
+             $cadena="";
+             for ($i=0; $i <$conte ; $i++) { 
+                 $cadena .="nom".$i."=".$detalles[$i]->articulo."&cantidad".$i."=".$detalles[$i]->cantidad."&unidad".$i."=".$detalles[$i]->unidad."&cli".$i."=".$venta->nombre."&";
+                 
+             }
+            $cadena .="total=".$conte;
+        return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles,"cadena"=>$cadena]);
     }
 
     //funcion para eliminar las categorias

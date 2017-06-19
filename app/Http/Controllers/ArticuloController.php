@@ -17,7 +17,7 @@ class ArticuloController extends Controller
     //construtor
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
     //funcion index
     public function index(Request $request)
@@ -51,9 +51,11 @@ class ArticuloController extends Controller
         $articulo=new Articulo;
         $articulo->idcategoria=$request->get('idcategoria');
         $articulo->codigo=$request->get('codigo');
-        $articulo->nombre=$request->get('nombre');
+        $articulo->nombre=strtoupper($request->get('nombre'));
         $articulo->stock=$request->get('stock');
-        $articulo->descripcion=$request->get('descripcion');
+        $articulo->descripcion=strtoupper($request->get('descripcion'));
+        $articulo->marca=strtoupper($request->get('marca'));
+        $articulo->unidad=strtoupper($request->get('unidad'));
         $articulo->estado='Activo';
 
         if (Input::hasFile('imagen')){
@@ -89,9 +91,9 @@ class ArticuloController extends Controller
          $articulo=Articulo::findOrFail($id);
          $articulo->idcategoria=$request->get('idcategoria');
          $articulo->codigo=$request->get('codigo');
-         $articulo->nombre=$request->get('nombre');
-         $articulo->stock=$request->get('stock');
-         $articulo->descripcion=$request->get('descripcion');
+         $articulo->nombre=strtoupper($request->get('nombre'));
+         $articulo->descripcion=strtoupper($request->get('descripcion'));
+         $articulo->marca=strtoupper($request->get('marca'));
          $articulo->estado='Activo';
 
          if (Input::hasFile('imagen')){

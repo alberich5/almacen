@@ -44,8 +44,8 @@ class CategoriaController extends Controller
     {
         //creo objeto de validacion tipo categoria
         $categoria=new Categoria;
-        $categoria->nombre=$request->get('nombre');
-        $categoria->descripcion=$request->get('descripcion');
+        $categoria->nombre=strtoupper($request->get('nombre'));
+        $categoria->descripcion=strtoupper($request->get('descripcion'));
         $categoria->condicion='1';
         $categoria->save();
         return Redirect::to('almacen/categoria');

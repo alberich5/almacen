@@ -41,16 +41,17 @@
                             
                             <th>Articulo</th>
                             <th>Cantidad</th>
-                            <th>Precio Venta</th>
-                             <th>Descuento</th>
+                            <th>Precio Salida</th>
                             <th>Subtotal</th>
+                            <th>Descargar</th>
                         </thead>
                         <tfoot>
                            
                             <th></th>
                             <th></th>
                             <th></th>
-                           <th></th>
+                            <th></th>
+                          
 
                             <th><h4 id="total">{{$venta->total_venta}}</h4></th>
                         </tfoot>
@@ -60,8 +61,8 @@
                                     <td>{{$det->articulo}}</td>
                                     <td>{{$det->cantidad}}</td>
                                     <td>{{$det->precio_venta}}</td>
-                                    <td>{{$det->descuento}}</td>
                                     <td>{{$det->cantidad*$det->precio_venta-$det->descuento}}</td>
+                                    <td><a href="http://172.16.0.203/crudomar/public/php/formato1.php?nom={{$det->articulo}}&cant={{$det->cantidad}}"><button class="btn btn-success">Descargar</button></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -116,9 +116,10 @@ class VentaController extends Controller
 
         $detalles=DB::table('detalle_venta as d')
              ->join('articulo as a','d.idarticulo','=','a.idarticulo')
-             ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta')
+             ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta','a.unidad')
              ->where('d.idventa','=',$id)
              ->get();
+        dd($detalles);
         return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
     }
 

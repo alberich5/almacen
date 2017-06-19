@@ -46,7 +46,7 @@
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     		<div class="form-group">
             	<label for="stock">Stock</label>
-            	<input type="text" name="stock" required value="{{$articulo->stock}}" class="form-control" >
+            	<input type="text" disabled name="stock" required value="{{$articulo->stock}}" class="form-control" >
             </div>
     	</div>
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -55,6 +55,12 @@
             	<input type="text" name="descripcion"  value="{{$articulo->descripcion}}" class="form-control" >
             </div>
     	</div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+                <label for="descripcion">Marca</label>
+                <input type="text" name="marca"  value="{{$articulo->marca}}" class="form-control" style="text-transform: uppercase;">
+            </div>
+        </div>
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     		<div class="form-group">
             	<label for="imagen">Imagen</label>

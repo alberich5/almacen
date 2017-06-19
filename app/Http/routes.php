@@ -23,8 +23,12 @@ Route::resource('compras/ingreso','IngresoController');
 //ruta de venta
 Route::resource('ventas/venta','VentaController');
 
+Route::resource('seguridad/usuario','UsuarioController');
+
 //ruta de hom de la apliaccion
 Route::get('/home', 'HomeController@index');
+
+
 
 //Rutas para el manejo de login y usuarios
 Route::auth();

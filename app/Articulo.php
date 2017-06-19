@@ -21,6 +21,8 @@ class Articulo extends Model
     	'nombre',
     	'stock',
     	'descripcion',
+        'marca',
+        'unidad',
     	'imagen',
     	'estado'
     ];

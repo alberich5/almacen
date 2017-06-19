@@ -117,7 +117,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/ventas/venta') }}"><i class="fa fa-circle-o"></i> Ventas</a></li>
+                <li><a href="{{ url('/ventas/venta') }}"><i class="fa fa-circle-o"></i> Salida</a></li>
                 <li><a href="{{ url('/ventas/cliente') }}"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>

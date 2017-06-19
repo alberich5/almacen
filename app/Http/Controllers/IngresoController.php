@@ -22,7 +22,7 @@ class IngresoController extends Controller
     //constructor 
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     //funcion del index

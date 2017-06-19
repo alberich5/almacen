@@ -21,13 +21,13 @@
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     		<div class="form-group">
             	<label for="nombre">Nombre</label>
-            	<input type="text" name="nombre" required value="{{old('nombre')}}" class="form-control" placeholder="Nombre...">
+            	<input type="text" name="nombre" required value="{{old('nombre')}}" class="form-control" placeholder="Nombre..." style="text-transform: uppercase;">
             </div>
     	</div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label for="direccion">Direccion</label>
-                <input type="text" name="direccion"  value="{{old('direccion')}}" class="form-control" placeholder="Direccion...">
+                <input type="text" name="direccion"  value="{{old('direccion')}}" class="form-control" placeholder="Direccion..." style="text-transform: uppercase;">
             </div>
         </div>
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -40,12 +40,6 @@
                         <option value="vehiculo">Vehiculo</option>
             	</select>
             	
-            </div>
-    	</div>
-    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    		<div class="form-group">
-            	<label for="num_documento">Numero de Documento</label>
-            	<input type="text" name="num_documento"  value="{{old('num_documento')}}" class="form-control" placeholder="Numero del Documento...">
             </div>
     	</div>
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

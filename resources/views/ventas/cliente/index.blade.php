@@ -12,10 +12,9 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
+					<th>ID</th>
 					<th>Nombre</th>
 					<th>Tipo de Doc.</th>
-					<th>Numero de Doc.</th>
 					<th>Telefono</th>
 					<th>Email</th>
 					<th>Opciones</th>
@@ -25,7 +24,6 @@
 					<td>{{ $per->idpersona}}</td>
 					<td>{{ $per->nombre}}</td>
 					<td>{{ $per->tipo_documento}}</td>
-					<td>{{ $per->num_documento}}</td>
 					<td>{{ $per->telefono}}</td>
 					<td>{{ $per->email}}</td>
 					<td>

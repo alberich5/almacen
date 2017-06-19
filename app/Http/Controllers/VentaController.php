@@ -118,9 +118,10 @@ class VentaController extends Controller
              ->where('d.idventa','=',$id)
              ->get();
             $cadena="";
+            
         foreach ($detalles as $det) {
             $cadena="nom=".$det->articulo."&cantidad=".$det->cantidad."uni=".$det->unidad;
-            dd($cadena);
+            
         }
 
   

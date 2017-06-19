@@ -78,7 +78,6 @@ class VentaController extends Controller
 
          $idarticulo = $request->get('idarticulo');
          $cantidad = $request->get('cantidad');
-         $descuento = $request->get('descuento');
          $precio_venta = $request->get('precio_venta');
 
          $cont = 0;
@@ -88,7 +87,6 @@ class VentaController extends Controller
              $detalle->idventa= $venta->idventa; 
              $detalle->idarticulo= $idarticulo[$cont];
              $detalle->cantidad= $cantidad[$cont];
-             $detalle->descuento= $descuento[$cont];
              $detalle->precio_venta= $precio_venta[$cont];
              $detalle->save();
              $cont=$cont+1;            
@@ -119,7 +117,6 @@ class VentaController extends Controller
              ->select('a.nombre as articulo','d.cantidad','d.descuento','d.precio_venta','a.unidad')
              ->where('d.idventa','=',$id)
              ->get();
-        dd($detalles);
         return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles]);
     }
 

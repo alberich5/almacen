@@ -14,6 +14,7 @@ $nombre = $_GET['nom'];
 $cantidad = $_GET['cant'];
 $area = $_GET['cli'];
 $unidad = $_GET['uni'];
+
 $dia=date('d');
 $mes=date('m');
 $ano=date('y');

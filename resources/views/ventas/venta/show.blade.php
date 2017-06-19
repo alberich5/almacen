@@ -50,7 +50,7 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            
                           
 
                             <th><h4 id="total">{{$venta->total_venta}}</h4></th>
@@ -61,8 +61,8 @@
                                     <td>{{$det->articulo}}</td>
                                     <td>{{$det->cantidad}}</td>
                                     <td>{{$det->precio_venta}}</td>
-                                    <td>{{$det->cantidad*$det->precio_venta-$det->descuento}}</td>
-                                    <td><a href="http://172.16.0.203/crudomar/public/php/formato1.php?nom={{$det->articulo}}&cant={{$det->cantidad}}"><button class="btn btn-success">Descargar</button></a></td>
+                                    <td>{{$det->cantidad*$det->precio_venta}}</td>
+                                    <td><a href="http://localhost/crudLaravel/public/php/formato1.php?nom={{$det->articulo}}&cant={{$det->cantidad}}&uni={{$det->unidad}}&cli={{ $venta->nombre}}"><button class="btn btn-success">Descargar</button></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

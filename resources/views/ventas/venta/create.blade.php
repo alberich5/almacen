@@ -85,13 +85,7 @@
                         <input type="number" disabled  name="pprecio_venta" id="pprecio_venta" class="form-control" placeholder="Precio Venta"> 
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div class="form-group">
-                       <label for="precio_venta">Descuento</label>
-                        <input type="number" name="pdescuento" id="pdescuento" class="form-control" value="0"> 
-                    </div>
-                </div>
-               
+                
             
                 
               
@@ -106,8 +100,7 @@
                             <th>Opciones</th>
                             <th>Articulo</th>
                             <th>Cantidad</th>
-                            <th>Precio Venta</th>
-                             <th>Descuento </th>
+                            <th>Precio Salida</th>
                             <th>Subtotal</th>
                         </thead>
                         <tfoot>
@@ -115,7 +108,6 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                           <th></th>
 
                             <th><h4 id="total">$ 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
                         </tfoot>
@@ -173,9 +165,9 @@ function mostrarValores(){
    {
 
     if(stock>=cantidad){
-        subtotal[cont]=(cantidad*precio_venta-descuento);
+        subtotal[cont]=(cantidad*precio_venta);
         total=total+subtotal[cont];
-        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number"  name="cantidad[]" value="'+cantidad+'"></td><td><input type="number"  name="precio_venta[]" value="'+precio_venta+'"></td><td><input type="number"  name="descuento[]" value="'+descuento+'"></td><td>'+subtotal[cont]+'</td></tr>';
+        var fila='<tr class="selected" id="fila'+cont+'"><td><button type="button" class="btn btn-warning" onclick="eliminar('+cont+')">x</button></td><td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td><td><input type="number"  name="cantidad[]" value="'+cantidad+'"></td><td><input type="number"  name="precio_venta[]" value="'+precio_venta+'"></td><td>'+subtotal[cont]+'</td></tr>';
         cont++;
         limpiar();
         $("#total").html("$"+total);

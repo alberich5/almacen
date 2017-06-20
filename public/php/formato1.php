@@ -12,12 +12,31 @@ $templateWord = new TemplateProcessor('formato1.docx');
 $total = $_GET['total'];
 
 //se recorre toda la cadena para imprimir los articulos que se compraron
-$var="";
+$art="";
 for ($i=0; $i <$total ; $i++) { 
-	$var.=$_GET['nom'.$i.'']."-";
+	$art.=$_GET['nom'.$i.'']."-";
 }
 
-echo $var;
+
+
+$area=$_GET['cli0'];
+$dia=date('d');
+$mes=date('m');
+$ano=date('y');
+
+$templateWord->setValue('articulo',$art);
+$templateWord->setValue('area',$area);
+$templateWord->setValue('dia',$dia);
+$templateWord->setValue('mes',$mes);
+$templateWord->setValue('ano',$ano);
+
+$tim =time();
+// --- Guardamos el documento
+$templateWord->saveAs('mante/descarga'.$tim.'.docx');
+
+header("Content-Disposition: attachment; filename=descarga".$tim.".docx; charset=iso-8859-1");
+
+echo file_get_contents('mante/descarga'.$tim.'.docx');
 
 
         

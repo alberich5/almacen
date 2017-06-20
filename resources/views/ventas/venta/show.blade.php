@@ -73,9 +73,9 @@
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="guardar">
     		<div class="form-group">
                     <input name="_token" value="{{ csrf_token() }}" type="hidden"></input>
-            	<button class="btn btn-primary" type="submit">Guardar</button>
+            	
                 <td><a href="http://localhost/crudLaravel/public/php/formato1.php?{{$cadena}}"><button class="btn btn-success">Descargar</button></a></td>
-            	<button class="btn btn-danger" type="reset">Cancelar</button>
+            	
             </div>
     	</div>
     </div>

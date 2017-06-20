@@ -11,21 +11,27 @@ $templateWord = new TemplateProcessor('formato1.docx');
 //variables captadas desde el formulario de index
 $total = $_GET['total'];
 
-//se recorre toda la cadena para imprimir los articulos que se compraron
-$art="";
+//for para imprimir todos los articulos cantidad y unidad en el template
 for ($i=0; $i <$total ; $i++) { 
-	$art.=$_GET['nom'.$i.'']."-";
+	$templateWord->setValue('articulo'.$i.'',$_GET['nom'.$i.'']);
+	$templateWord->setValue('unidad'.$i.'',$_GET['unidad'.$i.'']);
+	$templateWord->setValue('cant'.$i.'',$_GET['cantidad'.$i.'']);
+	$templateWord->setValue('n'.$i.'',$i+1);
+}
+//for para ocultar los elemetos restantes 
+for ($i=$total-1; $i <=12 ; $i++) { 
+	$templateWord->setValue('articulo'.$i.'',"");
+	$templateWord->setValue('unidad'.$i.'',"");
+	$templateWord->setValue('cant'.$i.'',"");
+	$templateWord->setValue('n'.$i.'',"");
 }
 
-
-
-$area=$_GET['cli0'];
 $dia=date('d');
 $mes=date('m');
 $ano=date('y');
 
-$templateWord->setValue('articulo',$art);
-$templateWord->setValue('area',$area);
+
+$templateWord->setValue('area',$_GET['cli0']);
 $templateWord->setValue('dia',$dia);
 $templateWord->setValue('mes',$mes);
 $templateWord->setValue('ano',$ano);

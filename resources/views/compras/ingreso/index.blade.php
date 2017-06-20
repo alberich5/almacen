@@ -6,6 +6,13 @@
 		@include('compras.ingreso.search')
 	</div>
 </div>
+<div id="mover">
+<form action="{{asset('php/excel/entradas.php')}}" method="get" accept-charset="utf-8">
+	<input type="hidden" name="fecha" value="<?php echo date("Y-m-d"); ?>">
+	<i class="fa fa-download" aria-hidden="true"><input type="submit" name="" value="excel" class=" btn btn-info"></i>
+</form>
+			
+</div>
 
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

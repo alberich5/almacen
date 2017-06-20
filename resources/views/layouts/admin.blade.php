@@ -12,7 +12,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/AdminLTE.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('css/sweetalert.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins

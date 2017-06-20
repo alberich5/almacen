@@ -23,6 +23,9 @@ Route::resource('compras/ingreso','IngresoController');
 //ruta de venta
 Route::resource('ventas/venta','VentaController');
 
+//ruta de venta
+Route::resource('reporte/kardex','ReporteController');
+
 Route::resource('seguridad/usuario','UsuarioController');
 
 //ruta de hom de la apliaccion

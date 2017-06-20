@@ -58,7 +58,7 @@
                     
                     <p>
                       www.pabic.com - Desarrollando Software
-                      <small>NubeBeta</small>
+                      
                     </p>
                   </li>
                   
@@ -125,6 +125,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> <span>Acceso</span>
+                <li><a href="{{ url('/reporte/kardex') }}"><i class="fa fa-circle-o"></i> Reportes</a></li>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">

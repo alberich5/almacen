@@ -6,10 +6,8 @@
 
 	
 	//Consulta
-	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,(ex.cantidad) as ini,(ef.cantidad) as fina FROM articulo AS a
-			INNER JOIN stock as s on a.id_articulo=s.id_articulo
-			INNER JOIN existencia_inicial as ex on a.id_articulo=ex.id_articulo
-			INNER JOIN existencia_final as ef on a.id_articulo=ef.id_articulo;";
+	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,v.precio_venta FROM articulo AS a
+	INNER JOIN detalle_venta as v on a.idarticulo=v.idarticulo;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
@@ -132,12 +130,12 @@
 		
 		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['nombre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['unidad']);
-		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['ini']);
+		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['precio_venta']);
+		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, 'Pendiente');
 		$objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, 'Pendiente');
 		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, $rows['fina']);
-		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, '=C'.$fila.'*D'.$fila);
+		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, 'Pendiente');
+		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, 'Pendiente');
 		
 
 		

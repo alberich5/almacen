@@ -56,6 +56,8 @@ class ArticuloController extends Controller
         $articulo->descripcion=strtoupper($request->get('descripcion'));
         $articulo->marca=strtoupper($request->get('marca'));
         $articulo->unidad=strtoupper($request->get('unidad'));
+        $articulo->precio=$request->get('precio');
+        $articulo->fecha=$request->get('fecha');
         $articulo->estado='Activo';
 
         if (Input::hasFile('imagen')){
@@ -94,6 +96,7 @@ class ArticuloController extends Controller
          $articulo->nombre=strtoupper($request->get('nombre'));
          $articulo->descripcion=strtoupper($request->get('descripcion'));
          $articulo->marca=strtoupper($request->get('marca'));
+         $articulo->precio=$request->get('precio');
          $articulo->estado='Activo';
 
          if (Input::hasFile('imagen')){

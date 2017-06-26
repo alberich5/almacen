@@ -23,6 +23,7 @@ class Articulo extends Model
     	'descripcion',
         'marca',
         'unidad',
+        'precio',
     	'imagen',
     	'estado'
     ];

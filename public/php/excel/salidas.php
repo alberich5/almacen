@@ -10,7 +10,6 @@ $fecha = $dia.'-'.$mes.'-'.$ano;
 	//Consulta
 	$sql = "SELECT a.nombre,a.unidad,count(salida.idarticulo) AS entrada FROM detalle_venta AS salida
 	INNER JOIN articulo as a on a.idarticulo=salida.idarticulo
-	WHERE DATE(salida.fecha) = '2017-06-20'
 	GROUP BY salida.idarticulo;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
@@ -127,7 +126,7 @@ $fecha = $dia.'-'.$mes.'-'.$ano;
 		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['nombre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['unidad']);
 		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, '0');
-		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['entrada']);
+		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, '0');
 		
 
 		

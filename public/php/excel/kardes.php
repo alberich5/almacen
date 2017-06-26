@@ -3,11 +3,47 @@
 	require 'Classes/PHPExcel.php';
 	require 'conexion.php';
 
+	$mes= $_GET["mes"];
+	$var1="";
+	$var2="";
+	if ($mes=="ENERO") {
+		$var1="01-01-2017";
+		$var2="31-01-2017";
+	}
+	if ($mes=="FEBRERO") {
+		$var1="01-02-2017";
+		$var2="27-02-2017";
+	}
+	if ($mes=="MARZO") {
+		$var1="01-03-2017";
+		$var2="31-03-2017";
+	}
+	if ($mes=="ABRIL") {
+		$var1="01-04-2017";
+		$var2="30-04-2017";
+	}
+	if ($mes=="MAYO") {
+		$var1="01-05-2017";
+		$var2="31-05-2017";
+	}
+	if ($mes=="JUNIO") {
+		$var1="01-06-2017";
+		$var2="30-06-2017";
+	}
+
 
 	
 	//Consulta
-	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,v.precio_venta FROM articulo AS a
-	INNER JOIN detalle_venta as v on a.idarticulo=v.idarticulo;";
+	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre FROM articulo AS a
+	INNER JOIN detalle_ingreso as di on a.idarticulo=di.idarticulo
+	INNER JOIN existencia_inicial as ex on ex.id_articulo=a.idarticulo
+	INNER JOIN existencia_final as fi on fi.id_articulo=a.idarticulo
+	LEFT JOIN detalle_venta as salida on a.idarticulo=salida.idarticulo
+	LEFT JOIN detalle_ingreso as ingreso on a.idarticulo=ingreso.idarticulo
+    WHERE DATE(ex.fecha) >= ".$var1." and  DATE(fi.fecha) >= ".$var2."
+    or DATE(ingreso.fecha) >= ".$var1." or DATE(ingreso.fecha) <= ".$var2."
+    GROUP BY a.idarticulo
+	;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
@@ -131,11 +167,11 @@
 		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['nombre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['unidad']);
 		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['precio_venta']);
-		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, 'Pendiente');
-		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, 'Pendiente');
+		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['inicial']);
+		$objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $rows['ingre']);
+		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, $rows['sali']);
+		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, $rows['final']);
+		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, '=C'.$fila.'*F'.$fila);
 		
 
 		

@@ -9,7 +9,7 @@
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		<form action="{{asset('php/excel/kardes.php')}}" method="get" accept-charset="utf-8">
 				{!! Form::label('kardes del mes:') !!}
-	    		{!! Form::select('cate', ['ENERO' => 'ENERO',
+	    		{!! Form::select('mes', ['ENERO' => 'ENERO',
 	    									 'FEBRERO' => 'FEBRERO',
 	    									 'ḾARZO' => 'ḾARZO',
 	    									  'ABRIL' => 'ABRIL',

@@ -14,7 +14,6 @@
 				<thead>
 					<th>Id</th>
 					<th>Nombre</th>
-					<th>Tipo de Doc.</th>
 					<th>Tipo</th>
 					<th>Telefono</th>
 					<th>Email</th>
@@ -25,7 +24,6 @@
 					<td>{{ $per->idpersona}}</td>
 					<td>{{ $per->nombre}}</td>
 					<td>{{ $per->tipo_documento}}</td>
-					<td>{{ $per->num_documento}}</td>
 					<td>{{ $per->telefono}}</td>
 					<td>{{ $per->email}}</td>
 					<td>

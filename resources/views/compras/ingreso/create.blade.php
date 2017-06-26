@@ -144,7 +144,7 @@
     precio_venta=$("#pprecio_venta").val();
 
 
-   if(idarticulo !="" && cantidad!="" && cantidad>0 && precio_compra!=""  )
+   if(idarticulo !="" && cantidad!="" && cantidad>=0 && precio_compra!=""  )
    {
         subtotal[cont]=(cantidad*precio_compra);
         total=total+subtotal[cont];
@@ -170,7 +170,7 @@
 
   function evaluar()
   {
-    if (total>0)
+    if (total>=0)
     {
       $("#guardar").show();
     }

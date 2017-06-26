@@ -194,7 +194,7 @@ function mostrarValores(){
 
   function evaluar()
   {
-    if (total>0)
+    if (total>=0)
     {
       $("#guardar").show();
     }

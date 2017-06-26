@@ -14,7 +14,7 @@
 				<thead>
 					<th>ID</th>
 					<th>Nombre</th>
-					<th>Tipo de Doc.</th>
+					<th>Tipo </th>
 					<th>Telefono</th>
 					<th>Email</th>
 					<th>Opciones</th>

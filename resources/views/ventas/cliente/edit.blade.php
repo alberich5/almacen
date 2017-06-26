@@ -40,12 +40,7 @@
                 
             </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-                <label for="num_documento">Numero de Documento</label>
-                <input type="text" name="num_documento"  value="{{$persona->num_documento}}" class="form-control" placeholder="Numero del Documento...">
-            </div>
-        </div>
+        
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group">
                 <label for="telefono">Telefono</label>

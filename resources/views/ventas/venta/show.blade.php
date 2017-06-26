@@ -74,7 +74,7 @@
     		<div class="form-group">
                     <input name="_token" value="{{ csrf_token() }}" type="hidden"></input>
             	
-                <td><a href="http://localhost/crudLaravel/public/php/formato1.php?{{$cadena}}"><button class="btn btn-success">Descargar</button></a></td>
+                <td><a href="http://172.16.0.203/crudLaravel/public/php/formato1.php?{{$cadena}}"><button class="btn btn-success">Descargar</button></a></td>
             	
             </div>
     	</div>

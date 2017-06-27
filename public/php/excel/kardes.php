@@ -30,10 +30,20 @@
 		$var1="01-06-2017";
 		$var2="30-06-2017";
 	}
+	if ($mes=="JULIO") {
+		$var1="01-07-2017";
+		$var2="30-07-2017";
+	}
+	if ($mes=="AGOSTO") {
+		$var1="01-08-2017";
+		$var2="30-08-2017";
+	}
 
-
+	//consulta para generarel corte del mes de existencia
+	$sql="";
+	$mysqli->query($sql);
 	
-	//Consulta
+	//Consulta para traer la informacion que se va a mostrar
 	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre FROM articulo AS a
 	INNER JOIN detalle_ingreso as di on a.idarticulo=di.idarticulo
 	INNER JOIN existencia_inicial as ex on ex.id_articulo=a.idarticulo

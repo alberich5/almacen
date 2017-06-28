@@ -34,7 +34,30 @@
 		SELECT idarticulo, stock from articulo;";
 		$resultado = $mysqli->query($sql);
 	}
-	
+	if ($mes=="JULIO") {
+		$var1="01-07-2017";
+		$var2="31-07-2017";
+	}
+	if ($mes=="AGOSTO") {
+		$var1="01-08-2017";
+		$var2="31-08-2017";
+	}
+	if ($mes=="septiembre") {
+		$var1="01-09-2017";
+		$var2="31-09-2017";
+	}
+	if ($mes=="OCTUBRE") {
+		$var1="01-10-2017";
+		$var2="31-10-2017";
+	}
+	if ($mes=="NOVIEMBRE") {
+		$var1="01-11-2017";
+		$var2="31-11-2017";
+	}
+	if ($mes=="DICIEMBRE") {
+		$var1="01-12-2017";
+		$var2="31-12-2017";
+	}
 
 	
 	
@@ -70,7 +93,7 @@
 	$objDrawing->setImageResource($gdImage);
 	$objDrawing->setRenderingFunction(PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG);
 	$objDrawing->setMimeType(PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
-	$objDrawing->setHeight(100);
+	$objDrawing->setHeight(90);
 	$objDrawing->setCoordinates('A1');
 	$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
 	

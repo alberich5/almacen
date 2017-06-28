@@ -74,6 +74,7 @@
                                              'GALON' => 'GALON',
                                              'INHALADOR' => 'INHALADOR',
                                              'JUEGO' => 'JUEGO',
+                                             'KIT' => 'KIT',
                                              'KG' => 'KG',
                                              'LITRO' => 'LITRO',
                                              'MCC' => 'MCC',

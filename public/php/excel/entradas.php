@@ -8,7 +8,7 @@
 	//Consulta
 	$sql = "SELECT a.nombre,a.unidad,count(entrada.idarticulo) AS salida FROM detalle_ingreso AS entrada
 	INNER JOIN articulo as a on a.idarticulo=entrada.idarticulo
-	WHERE DATE(entrada.fecha) = '2017-05-09'
+	WHERE DATE(entrada.fecha) = '2017-06-28'
 	GROUP BY entrada.idarticulo;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos

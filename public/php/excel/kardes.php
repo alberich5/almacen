@@ -29,12 +29,14 @@
 	if ($mes=="JUNIO") {
 		$var1="01-06-2017";
 		$var2="30-06-2017";
+		//consulta para generarel corte del mes de existencia
+		$sql = "INSERT INTO existencia_final (id_articulo,cantidad) 
+		SELECT idarticulo, stock from articulo;";
+		$resultado = $mysqli->query($sql);
 	}
 	
 
-	//consulta para generarel corte del mes de existencia
-	$sql="";
-	$mysqli->query($sql);
+	
 	
 	//Consulta para traer la informacion que se va a mostrar
 	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre FROM articulo AS a

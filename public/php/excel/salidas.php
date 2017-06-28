@@ -3,14 +3,12 @@
 	require 'Classes/PHPExcel.php';
 	require 'conexion.php';
 
-$dia = date(d);
-$mes = date(m);
-$ano= date(Y);
-$fecha = $dia.'-'.$mes.'-'.$ano;
+
+	
 	//Consulta
-	$sql = "SELECT a.nombre,a.unidad,count(salida.idarticulo) AS entrada FROM detalle_venta AS salida
-	INNER JOIN articulo as a on a.idarticulo=salida.idarticulo
-	GROUP BY salida.idarticulo;";
+	$sql = "SELECT a.nombre,a.unidad,dv.idarticulo,SUM(dv.cantidad) as total from detalle_venta AS dv
+RIGHT JOIN articulo AS a ON a.idarticulo=dv.idarticulo
+GROUP BY a.idarticulo;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
 	
@@ -20,7 +18,7 @@ $fecha = $dia.'-'.$mes.'-'.$ano;
 	$objPHPExcel  = new PHPExcel();
 	
 	//Propiedades de Documento
-	$objPHPExcel->getProperties()->setCreator("Omar Zarate")->setDescription("Reporte de movimientos");
+	$objPHPExcel->getProperties()->setCreator("Omar Zarate")->setDescription("Reporte de Salidas");
 	
 	//Establecemos la pestaña activa y nombre a la pestaña
 	$objPHPExcel->setActiveSheetIndex(0);
@@ -126,7 +124,7 @@ $fecha = $dia.'-'.$mes.'-'.$ano;
 		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['nombre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['unidad']);
 		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, '0');
-		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, '0');
+		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['total']);
 		
 
 		

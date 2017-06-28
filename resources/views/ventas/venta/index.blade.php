@@ -21,7 +21,6 @@
 					<th>Fecha</th>
 					<th>Cliente</th>
 					<th>Comprobante</th>
-					<th>Impuesto</th>
 					<th>Total</th>
 					<th>Estado</th>
 					<th>Opciones</th>
@@ -31,7 +30,6 @@
 					<td>{{ $ven->fecha_hora}}</td>
 					<td>{{ $ven->nombre}}</td>
 					<td>{{ $ven->tipo_comprobante.': '.$ven->serie_comprobante.'-'.$ven->num_comprobante}}</td>
-					<td>{{ $ven->impuesto}}</td>
 					<td>{{ $ven->total_venta}}</td>
 					<td>{{ $ven->estado}}</td>
 					<td>

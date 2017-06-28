@@ -30,14 +30,7 @@
 		$var1="01-06-2017";
 		$var2="30-06-2017";
 	}
-	if ($mes=="JULIO") {
-		$var1="01-07-2017";
-		$var2="30-07-2017";
-	}
-	if ($mes=="AGOSTO") {
-		$var1="01-08-2017";
-		$var2="30-08-2017";
-	}
+	
 
 	//consulta para generarel corte del mes de existencia
 	$sql="";

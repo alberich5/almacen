@@ -39,7 +39,7 @@
 	
 	
 	//Consulta para traer la informacion que se va a mostrar
-	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre FROM articulo AS a
+	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre,DATE(a.fecha) AS FechaIngre FROM articulo AS a
 	INNER JOIN detalle_ingreso as di on a.idarticulo=di.idarticulo
 	INNER JOIN existencia_inicial as ex on ex.id_articulo=a.idarticulo
 	INNER JOIN existencia_final as fi on fi.id_articulo=a.idarticulo
@@ -142,41 +142,44 @@
     )
 	));
 	
-	$objPHPExcel->getActiveSheet()->getStyle('A1:H4')->applyFromArray($estiloTituloReporte);
-	$objPHPExcel->getActiveSheet()->getStyle('A6:H6')->applyFromArray($estiloTituloColumnas);
+	$objPHPExcel->getActiveSheet()->getStyle('A1:I4')->applyFromArray($estiloTituloReporte);
+	$objPHPExcel->getActiveSheet()->getStyle('A6:I6')->applyFromArray($estiloTituloColumnas);
 	
 	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'KARDES DEL MES');
 	$objPHPExcel->getActiveSheet()->mergeCells('D3:F3');
 	
-	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(45);
-	$objPHPExcel->getActiveSheet()->setCellValue('A6', 'DESCRIPCION');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-	$objPHPExcel->getActiveSheet()->setCellValue('B6', 'UNIDAD');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
-	$objPHPExcel->getActiveSheet()->setCellValue('C6', 'PRECIO');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(33);
-	$objPHPExcel->getActiveSheet()->setCellValue('D6', 'EXISTENCIA INICIO DE MES');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(25);
-	$objPHPExcel->getActiveSheet()->setCellValue('E6', 'ENTRADA');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(25);
-	$objPHPExcel->getActiveSheet()->setCellValue('F6', 'SALIDA');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(33);
-	$objPHPExcel->getActiveSheet()->setCellValue('G6', 'EXISTENCIA FINAL DE MES');
-	$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(25);
-	$objPHPExcel->getActiveSheet()->setCellValue('H6', 'COSTO FINAL');
 
+	$objPHPExcel->getActiveSheet()->setCellValue('A6', 'FECHA INGRESO DEL ARTICULO');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(25);
+	$objPHPExcel->getActiveSheet()->setCellValue('B6', 'DESCRIPCION');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(45);
+	$objPHPExcel->getActiveSheet()->setCellValue('C6', 'UNIDAD');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
+	$objPHPExcel->getActiveSheet()->setCellValue('D6', 'PRECIO');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(33);
+	$objPHPExcel->getActiveSheet()->setCellValue('E6', 'EXISTENCIA INICIO DE MES');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(25);
+	$objPHPExcel->getActiveSheet()->setCellValue('F6', 'ENTRADA');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(25);
+	$objPHPExcel->getActiveSheet()->setCellValue('G6', 'SALIDA');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(33);
+	$objPHPExcel->getActiveSheet()->setCellValue('H6', 'EXISTENCIA FINAL DE MES');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+	$objPHPExcel->getActiveSheet()->setCellValue('I6', 'COSTO FINAL');
+	$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(17);
 	
 	//Recorremos los resultados de la consulta y los imprimimos
 	while($rows = $resultado->fetch_assoc()){
 		
-		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['nombre']);
-		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['unidad']);
-		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['precio_venta']);
-		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['inicial']);
-		$objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $rows['ingre']);
-		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, $rows['sali']);
-		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, $rows['final']);
-		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, '=C'.$fila.'*F'.$fila);
+		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['FechaIngre']);
+		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['nombre']);
+		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['unidad']);
+		$objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['precio_venta']);
+		$objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $rows['inicial']);
+		$objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, $rows['ingre']);
+		$objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, $rows['sali']);
+		$objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, $rows['final']);
+		$objPHPExcel->getActiveSheet()->setCellValue('I'.$fila, '=D'.$fila.'*G'.$fila);
 		
 
 		
@@ -185,7 +188,7 @@
 	
 	$fila = $fila-1;
 	
-	$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:H".$fila);
+	$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:I".$fila);
 	
 	$filaGrafica = $fila+2;
 	

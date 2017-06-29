@@ -31,7 +31,7 @@
 		$var2="30-06-2017";
 		//consulta para generarel corte del mes de existencia
 		$sql = "INSERT INTO existencia_final (id_articulo,cantidad,posicion) 
-		SELECT idarticulo, stock,'3' from articulo;";
+		SELECT idarticulo, stock,'7' from articulo;";
 		$resultado = $mysqli->query($sql);
 	}
 	if ($mes=="JULIO") {

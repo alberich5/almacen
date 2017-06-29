@@ -72,7 +72,7 @@ class IngresoController extends Controller
 	         $ingreso->fecha_hora=$mytime->toDateTimeString();
 	         $ingreso->impuesto='18';
 	         $ingreso->estado='A';
-	         $ingreso->save();
+	         //$ingreso->save();
 
 
 	         $idarticulo = $request->get('idarticulo');
@@ -81,14 +81,16 @@ class IngresoController extends Controller
 	         $cont = 0;
 
 	         while($cont < count($idarticulo)){
+                //verifico si se inserto el primer dato
 	             $detalle = new DetalleIngreso();
 	             $detalle->idingreso= $ingreso->idingreso; 
 	             $detalle->idarticulo= $idarticulo[$cont];
 	             $detalle->cantidad= $cantidad[$cont];
 	             $detalle->precio_compra= $precio_compra[$cont];
-                  $detalle->precio_venta= $precio_compra[$cont];
+                 $detalle->precio_venta= $precio_compra[$cont];
 	             $detalle->save();
-	             $cont=$cont+1;            
+	             $cont=$cont+1;
+                            
 	         }
 
            DB::commit();

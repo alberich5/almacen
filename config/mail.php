@@ -37,8 +37,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This is the SMTP port used by your application to deliver e-mails to
-    | users of the application. Like the host we have set this value to
-    | stay compatible with the Mailgun e-mail application by default.
+    | users of the application. Like the host we have set this value to    | stay compatible with the Mailgun e-mail application by default.
     |
     */
 
@@ -85,7 +84,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | SMTP Server Password
+    | SMTP Contraseña del Servidor
     |--------------------------------------------------------------------------
     |
     | Here you may set the password required by your SMTP server to send out

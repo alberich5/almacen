@@ -1,3 +1,4 @@
 User-agent: *
 Disallow:
 varianbles que buscaran los navegadores
+Se crearon las modulos para que se puedan descargar las datos necesarios

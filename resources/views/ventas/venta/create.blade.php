@@ -33,8 +33,8 @@
     		<div class="form-group">
             	<label>Tipo Comprobante</label>
             	<select name="tipo_comprobante" class="form-control">
-	            		<option value="Boleta">Boleta</option>
                         <option value="Factura">Factura</option>
+	            		<option value="Boleta">Boleta</option>
                         <option value="Ticket">Ticket</option>
             	</select>
             	

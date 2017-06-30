@@ -72,7 +72,7 @@ class IngresoController extends Controller
 	         $ingreso->fecha_hora=$mytime->toDateTimeString();
 	         $ingreso->impuesto='18';
 	         $ingreso->estado='A';
-	         //$ingreso->save();
+	         $ingreso->save();
 
 
 	         $idarticulo = $request->get('idarticulo');

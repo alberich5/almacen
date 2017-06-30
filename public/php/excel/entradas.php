@@ -3,11 +3,12 @@
 	require 'Classes/PHPExcel.php';
 	require 'conexion.php';
 
-
+	$fecha=$_GET['fecha'];
 	
 	//Consulta
 	$sql = "SELECT a.nombre,a.unidad,di.idarticulo,SUM(di.cantidad) as total from detalle_ingreso AS di
 	RIGHT JOIN articulo AS a ON a.idarticulo=di.idarticulo
+	WHERE DATE(di.fecha)='".$fecha."'
 	GROUP BY a.idarticulo;";
 	$resultado = $mysqli->query($sql);
 	$fila = 7; //Establecemos en que fila inciara a imprimir los datos
@@ -105,7 +106,7 @@
 	$objPHPExcel->getActiveSheet()->getStyle('A1:H4')->applyFromArray($estiloTituloReporte);
 	$objPHPExcel->getActiveSheet()->getStyle('A6:D6')->applyFromArray($estiloTituloColumnas);
 	
-	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'ENTRADAS DEL DIA');
+	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'ENTRADAS DEL DIA '.$fecha.'');
 	$objPHPExcel->getActiveSheet()->mergeCells('D3:D3');
 	
 	$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(45);

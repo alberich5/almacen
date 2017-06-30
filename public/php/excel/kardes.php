@@ -7,62 +7,62 @@
 	$var1="";
 	$var2="";
 	if ($mes=="ENERO") {
-		$var1="01-01-2017";
-		$var2="31-01-2017";
+		$var1="2017-01-01";
+		$var2="2017-01-30";
 	}
 	if ($mes=="FEBRERO") {
-		$var1="01-02-2017";
-		$var2="27-02-2017";
+		$var1="2017-02-01";
+		$var2="2017-02-27";
 	}
 	if ($mes=="MARZO") {
-		$var1="01-03-2017";
-		$var2="31-03-2017";
+		$var1="2017-03-01";
+		$var2="2017-03-30";
 	}
 	if ($mes=="ABRIL") {
-		$var1="01-04-2017";
-		$var2="30-04-2017";
+		$var1="2017-04-01";
+		$var2="2017-04-30";
 	}
 	if ($mes=="MAYO") {
-		$var1="01-05-2017";
-		$var2="31-05-2017";
+		$var1="2017-05-01";
+		$var2="2017-05-30";
 	}
 	if ($mes=="JUNIO") {
-		$var1="01-06-2017";
-		$var2="30-06-2017";
+		$var1="2017-06-01";
+		$var2="2017-06-30";
 		//consulta para generarel corte del mes de existencia
 		$sql = "INSERT INTO existencia_final (id_articulo,cantidad,posicion) 
 		SELECT idarticulo, stock,'7' from articulo;";
 		$resultado = $mysqli->query($sql);
 	}
 	if ($mes=="JULIO") {
-		$var1="01-07-2017";
-		$var2="31-07-2017";
+		$var1="2017-07-01";
+		$var2="2017-07-30";
 	}
 	if ($mes=="AGOSTO") {
-		$var1="01-08-2017";
-		$var2="31-08-2017";
+		$var1="2017-08-01";
+		$var2="2017-08-30";
 	}
 	if ($mes=="septiembre") {
-		$var1="01-09-2017";
-		$var2="31-09-2017";
+		$var1="2017-09-01";
+		$var2="2017-09-30";
 	}
 	if ($mes=="OCTUBRE") {
-		$var1="01-10-2017";
-		$var2="31-10-2017";
+		$var1="2017-10-01";
+		$var2="2017-10-31";
 	}
 	if ($mes=="NOVIEMBRE") {
-		$var1="01-11-2017";
-		$var2="31-11-2017";
+		$var1="2017-11-01";
+		$var2="2017-11-30";
 	}
 	if ($mes=="DICIEMBRE") {
-		$var1="01-12-2017";
-		$var2="31-12-2017";
+		$var1="2017-12-01";
+		$var2="2017-12-31";
 	}
 
 	
 	
 	//Consulta para traer la informacion que se va a mostrar
-	$sql = "SELECT CONCAT(nombre, ' ' , descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre,DATE(a.fecha) AS FechaIngre FROM articulo AS a
+	$sql = "SELECT CONCAT(a.nombre, ' ' , a.descripcion) as nombre, a.unidad,di.precio_venta, (ex.cantidad) AS inicial,(fi.cantidad) AS final,count(salida.idarticulo) as sali,count(ingreso.idarticulo) as ingre,DATE(a.fecha) AS FechaIngre FROM articulo AS a
 	INNER JOIN detalle_ingreso as di on a.idarticulo=di.idarticulo
 	INNER JOIN existencia_inicial as ex on ex.id_articulo=a.idarticulo
 	INNER JOIN existencia_final as fi on fi.id_articulo=a.idarticulo

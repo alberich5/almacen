@@ -15,17 +15,21 @@
 					<th>Id</th>
 					<th>Nombre</th>
 					<th>Descripción</th>
+					@if (Auth::user()->name == 'admin')
 					<th>Opciones</th>
+					@endif
 				</thead>
                @foreach ($categorias as $cat)
 				<tr>
 					<td>{{ $cat->idcategoria}}</td>
 					<td>{{ $cat->nombre}}</td>
 					<td>{{ $cat->descripcion}}</td>
+					@if (Auth::user()->name == 'admin')
 					<td>
 						<a href="{{URL::action('CategoriaController@edit',$cat->idcategoria)}}"><button class="btn btn-info">Editar</button></a>
                          <a href="" data-target="#modal-delete-{{$cat->idcategoria}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
+					@endif
 				</tr>
 				@include('almacen.categoria.modal')
 				@endforeach

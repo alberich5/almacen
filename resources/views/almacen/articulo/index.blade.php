@@ -19,7 +19,9 @@
 					<th>Stock</th>
 					<th>Imagen</th>
 					<th>Estado</th>
+					@if (Auth::user()->name == 'admin')
 					<th>Opciones</th>
+					@endif
 				</thead>
                @foreach ($articulos as $art)
 				<tr>
@@ -32,10 +34,12 @@
 						<img src="{{asset('imagenes/articulos/'.$art->imagen)}}" alt="{{ $art->nombre}}" height="100px" width="100px" class="img-thumbnail">
 					</td>
 					<td>{{ $art->estado}}</td>
+					@if (Auth::user()->name == 'admin')
 					<td>
 						<a href="{{URL::action('ArticuloController@edit',$art->idarticulo)}}"><button class="btn btn-info">Editar</button></a>
                          <a href="" data-target="#modal-delete-{{$art->idarticulo}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
+					@endif
 				</tr>
 				@include('almacen.articulo.modal')
 				@endforeach

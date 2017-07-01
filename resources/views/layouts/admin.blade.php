@@ -50,7 +50,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <small class="bg-red">Online</small>
-                  <span class="hidden-xs">Omar Zarate Hipolito</span>
+                  <span class="hidden-xs">{{ Auth::user()->name}}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -121,19 +121,20 @@
                 <li><a href="{{ url('/ventas/cliente') }}"><i class="fa fa-circle-o"></i> Clientes</a></li>
               </ul>
             </li>
-                       
-            <li class="treeview">
-              <a href="{{ url('/seguridad/usuario') }}">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
+               
+            @if (Auth::user()->name == 'admin')        
+              <li class="treeview">
+                <a href="{{ url('/seguridad/usuario') }}">
+                  <i class="fa fa-folder"></i> <span>Acceso</span>
+                </a>
+              </li>
+            @endif
+
+             <li class="treeview">
                 <li><a href="{{ url('/reporte/kardex') }}"><i class="fa fa-circle-o"></i> Reportes</a></li>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                
-              </ul>
             </li>
-             
            
                         
           </ul>

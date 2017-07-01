@@ -30,8 +30,8 @@ Route::resource('seguridad/usuario','UsuarioController');
 
 //ruta de hom de la apliaccion
 Route::get('/home', 'HomeController@index');
-
-
+//ruta de seguridad de usuarios de laravel
+Route::resource('seguridad/usuario','UsuarioController');
 
 //Rutas para el manejo de login y usuarios
 Route::auth();

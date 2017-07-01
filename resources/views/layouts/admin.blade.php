@@ -123,13 +123,13 @@
             </li>
                        
             <li class="treeview">
-              <a href="#">
+              <a href="{{ url('/seguridad/usuario') }}">
                 <i class="fa fa-folder"></i> <span>Acceso</span>
                 <li><a href="{{ url('/reporte/kardex') }}"><i class="fa fa-circle-o"></i> Reportes</a></li>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Usuarios</a></li>
                 
               </ul>
             </li>

@@ -3,11 +3,10 @@ html {
 	height: 100%;
 }
 body {
-	background-color: red;
 	color: #fff;
 	font-size: 16px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	background-image: url(img/fondo.jpg);
+	background-image: url(images/fondo.jpg);
 	background-size: cover;
 	background-position: 50% 0;
 	height: 100%;
@@ -16,7 +15,7 @@ body {
 
 
 
-main {
+.main {
 	display: inline-block;
 	vertical-align: middle;
 	background: url(images/fondo.jpg);

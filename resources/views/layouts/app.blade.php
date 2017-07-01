@@ -20,6 +20,7 @@
     <style>
         body {
             font-family: 'Lato';
+            background-image: url(images/fondo.jpg);
         }
 
         .fa-btn {
@@ -29,7 +30,7 @@
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
-      
+      <br><br><br>
     </nav>
 
     @yield('content')

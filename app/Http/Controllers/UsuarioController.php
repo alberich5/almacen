@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use Omar\Http\Requests;
 
-use sisVentas\User;
+use Omar\User;
 use Illuminate\Support\Facades\Redirect;
-use sisVentas\Http\Requests\UsuarioFormRequest;
+use Omar\Http\Requests\UsuarioFormRequest;
 use DB;
 
 class UsuarioController extends Controller

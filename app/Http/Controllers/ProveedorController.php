@@ -52,7 +52,7 @@ class ProveedorController extends Controller
         $persona->telefono=$request->get('telefono');
         $persona->email=$request->get('email');        
         $persona->save();
-        return Redirect::to('compras/proveedor');
+        return Redirect::to('almacen-proveedor');
 
     }
 
@@ -81,7 +81,7 @@ class ProveedorController extends Controller
         $persona->email=$request->get('email');
 
         $persona->update();
-        return Redirect::to('compras/proveedor');
+        return Redirect::to('almacen-proveedor');
     }
 
     //funcion para destruir algun provedor
@@ -90,6 +90,6 @@ class ProveedorController extends Controller
         $persona=Persona::findOrFail($id);
         $persona->tipo_persona='Inactivo';
         $persona->update();
-        return Redirect::to('compras/proveedor');
+        return Redirect::to('almacen-proveedor');
     }
 }

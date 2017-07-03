@@ -15,7 +15,7 @@
 		</div>
 	</div>
 			
-			{!!Form::open(array('url'=>'compras/proveedor','method'=>'POST','autocomplete'=>'off'))!!}
+			{!!Form::open(array('url'=>'almacen-proveedor-store','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
     <div class="row">
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

@@ -99,7 +99,7 @@ class VentaController extends Controller
            DB::rollback();
         }
 
-        return Redirect::to('ventas/venta');
+        return Redirect::to('almacen-venta');
     }
 
     //funcion para mostrar las ventas
@@ -134,7 +134,7 @@ class VentaController extends Controller
         $venta=Venta::findOrFail($id);
         $venta->Estado='C';
         $venta->update();
-        return Redirect::to('ventas/venta');
+        return Redirect::to('almacen-venta');
     }
 
 

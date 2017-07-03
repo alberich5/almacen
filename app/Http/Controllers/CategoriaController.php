@@ -57,7 +57,7 @@ class CategoriaController extends Controller
           $log->tipo='Entrada_Categoria';
           $log->save();
 
-        return Redirect::to('almacen/categoria');
+        return Redirect::to('almacen-categoria');
 
     }
 
@@ -89,7 +89,7 @@ class CategoriaController extends Controller
         $categoria=Categoria::findOrFail($id);
         $categoria->condicion='0';
         $categoria->update();
-        return Redirect::to('almacen/categoria');
+        return Redirect::to('almacen-categoria');
     }
 
 

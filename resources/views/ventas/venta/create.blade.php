@@ -15,7 +15,7 @@
 		</div>
 	</div>
 			 
-			{!!Form::open(array('url'=>'ventas/venta','method'=>'POST','autocomplete'=>'off'))!!}
+			{!!Form::open(array('url'=>'almacen-venta','method'=>'POST','autocomplete'=>'off'))!!}
                 {{Form::token()}}
     <div class="row">
     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -49,7 +49,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <div class="form-group">
                 <label for="num_comprobante">Numero Comprobante</label>
-                <input type="text" name="num_comprobante" required value="{{old('num_comprobante')}}" class="form-control" placeholder="Nuemero de Comprobante...">
+                <input type="text" name="num_comprobante" required value="{{old('num_comprobante')}}" class="form-control" placeholder="Numero de Comprobante...">
             </div>
         </div>
     	

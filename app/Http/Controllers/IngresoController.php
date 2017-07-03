@@ -110,7 +110,7 @@ class IngresoController extends Controller
            DB::commit();
      	     
               
-     	   return Redirect::to('compras/ingreso'); 
+     	   return Redirect::to('almacen-ingreso'); 
 
     }
 
@@ -138,6 +138,6 @@ class IngresoController extends Controller
        $ingreso=Ingreso::findOrFail($id);
        $ingreso->Estado='C';
        $ingreso->update();
-       return Redirect::to('compras/ingreso');
+       return Redirect::to('almacen-ingreso');
     }
 }

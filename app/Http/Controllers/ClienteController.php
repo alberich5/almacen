@@ -59,7 +59,7 @@ class ClienteController extends Controller
           $log->id_user=Auth::user()->id;
           $log->tipo='Entrada_Categoria';
           $log->save();
-        return Redirect::to('ventas/cliente');
+        return Redirect::to('almacen-cliente');
 
     }
 
@@ -88,7 +88,7 @@ class ClienteController extends Controller
         $persona->email=$request->get('email');
 
         $persona->update();
-        return Redirect::to('ventas/cliente');
+        return Redirect::to('almacen-cliente');
     }
 
     //funcion para eliminar cliente
@@ -97,7 +97,7 @@ class ClienteController extends Controller
         $persona=Persona::findOrFail($id);
         $persona->tipo_persona='Inactivo';
         $persona->update();
-        return Redirect::to('ventas/cliente');
+        return Redirect::to('almacen-cliente');
     }
 
 }

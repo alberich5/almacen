@@ -7,10 +7,11 @@ Route::get('/', function () {
 
 //ruta de categoria
 Route::get('almacen-categoria', 'CategoriaController@index');
-Route::get('almacen-crear', 'CategoriaController@create');
+Route::get('almacen-categoria-crear', 'CategoriaController@create');
 //Route::get('almacen-editar', 'CategoriaController@edit');
-Route::get('almacen-editar',['uses'=> 'CategoriaController@edit', 'as'=> 'almacen-editar.index']);
-Route::get('almacen-borrar', 'CategoriaController@destroy');
+Route::get('almacen-categoria-editar',['uses'=> 'CategoriaController@edit', 'as'=> 'almacen-editar.index']);
+Route::get('almacen-categoria-borrar', 'CategoriaController@destroy');
+Route::post('almacen-categoria-store', 'CategoriaController@store');
 
 //Route::resource('almacen/categoria','CategoriaController');
 
@@ -27,6 +28,7 @@ Route::get('almacen-cliente', 'ClienteController@index');
 Route::get('almacen-cliente-crear', 'ClienteController@create');
 Route::get('almacen-cliente-editar', 'ClienteController@edit');
 Route::get('almacen-cliente-borrar', 'ClienteController@destroy');
+Route::post('almacen-cliente-store', 'ClienteController@store');
 
 //ruta del proveedor
 //Route::resource('compras/proveedor','ProveedorController');
@@ -34,6 +36,8 @@ Route::get('almacen-proveedor', 'ProveedorController@index');
 Route::get('almacen-proveedor-crear', 'ProveedorController@create');
 Route::get('almacen-proveedor-editar', 'ProveedorController@edit');
 Route::get('almacen-proveedor-borrar', 'ProveedorController@destroy');
+Route::post('almacen-proveedor-store', 'ProveedorController@store');
+Route::patch('almacen-proveedor-update', 'ProveedorController@update');
 
 //ruta del ingreso almacen
 //Route::resource('compras/ingreso','IngresoController');
@@ -42,6 +46,7 @@ Route::get('almacen-ingreso-crear', 'IngresoController@create');
 Route::get('almacen-ingreso-mostrar', 'IngresoController@show');
 Route::get('almacen-ingreso-editar', 'IngresoController@edit');
 Route::get('almacen-ingreso-borrar', 'IngresoController@destroy');
+Route::post('almacen-ingreso-store', 'IngresoController@store');
 
 //ruta de venta
 //Route::resource('ventas/venta','VentaController');
@@ -50,6 +55,7 @@ Route::get('almacen-venta-crear', 'VentaController@create');
 Route::get('almacen-venta-mostrar', 'VentaController@show');
 Route::get('almacen-venta-editar', 'VentaController@edit');
 Route::get('almacen-venta-borrar', 'VentaController@destroy');
+Route::post('almacen-venta-store', 'VentaController@store');
 
 //ruta de venta
 //Route::resource('reporte/kardex','ReporteController');

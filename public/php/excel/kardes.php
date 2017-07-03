@@ -4,18 +4,17 @@
 	require 'conexion.php';
 
 	$mes = date("m");
-	$fecha = date("Y-m-d")
-	switch ($mes) {
-		case '6':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
+	$fecha = date("Y-m-d");
+	echo $fecha;
+	//el volcado de informacion hacia la tabla de existencia final
+	$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
 				$resultado = $mysqli->query($sql);
 				//Se inserta los valores de la tablas
 				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
 				SELECT idarticulo, stock,'".$mes."' from articulo;";
 				$resultado = $mysqli->query($sql);
 				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-06-01') {
+				if ($fecha=='2017-'.$mes.'-01') {
 					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
 					$resultado = $mysqli->query($sql);
 					//Se inserta los valores de la tablas
@@ -23,117 +22,7 @@
 					SELECT idarticulo, stock,'".$mes."' from articulo;";
 					$resultado = $mysqli->query($sql);
 				}
-			break;
-		case '7':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
-				$resultado = $mysqli->query($sql);
-				//Se inserta los valores de la tablas
-				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
-				SELECT idarticulo, stock,'".$mes."' from articulo;";
-				$resultado = $mysqli->query($sql);
-				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-07-01') {
-					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
-					$resultado = $mysqli->query($sql);
-					//Se inserta los valores de la tablas
-					$sql = "INSERT INTO existencia_inicial (id_articulo,cantidad,mes) 
-					SELECT idarticulo, stock,'".$mes."' from articulo;";
-					$resultado = $mysqli->query($sql);
-				}
-			break;
-		case '8':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
-				$resultado = $mysqli->query($sql);
-				//Se inserta los valores de la tablas
-				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
-				SELECT idarticulo, stock,'".$mes."' from articulo;";
-				$resultado = $mysqli->query($sql);
-				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-08-01') {
-					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
-					$resultado = $mysqli->query($sql);
-					//Se inserta los valores de la tablas
-					$sql = "INSERT INTO existencia_inicial (id_articulo,cantidad,mes) 
-					SELECT idarticulo, stock,'".$mes."' from articulo;";
-					$resultado = $mysqli->query($sql);
-				}
-			break;
-		case '9':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
-				$resultado = $mysqli->query($sql);
-				//Se inserta los valores de la tablas
-				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
-				SELECT idarticulo, stock,'".$mes."' from articulo;";
-				$resultado = $mysqli->query($sql);
-				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-09-01') {
-					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
-					$resultado = $mysqli->query($sql);
-					//Se inserta los valores de la tablas
-					$sql = "INSERT INTO existencia_inicial (id_articulo,cantidad,mes) 
-					SELECT idarticulo, stock,'".$mes."' from articulo;";
-					$resultado = $mysqli->query($sql);
-				}
-			break;
-		case '10':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
-				$resultado = $mysqli->query($sql);
-				//Se inserta los valores de la tablas
-				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
-				SELECT idarticulo, stock,'".$mes."' from articulo;";
-				$resultado = $mysqli->query($sql);
-				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-10-01') {
-					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
-					$resultado = $mysqli->query($sql);
-					//Se inserta los valores de la tablas
-					$sql = "INSERT INTO existencia_inicial (id_articulo,cantidad,mes) 
-					SELECT idarticulo, stock,'".$mes."' from articulo;";
-					$resultado = $mysqli->query($sql);
-				}
-			break;
-		case '11':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
-				$resultado = $mysqli->query($sql);
-				//Se inserta los valores de la tablas
-				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
-				SELECT idarticulo, stock,'".$mes."' from articulo;";
-				$resultado = $mysqli->query($sql);
-				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-11-01') {
-					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
-					$resultado = $mysqli->query($sql);
-					//Se inserta los valores de la tablas
-					$sql = "INSERT INTO existencia_inicial (id_articulo,cantidad,mes) 
-					SELECT idarticulo, stock,'".$mes."' from articulo;";
-					$resultado = $mysqli->query($sql);
-				}
-			break;
-		case '12':
-				// se limpia la tabla antyes de mandar a guardar
-				$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
-				$resultado = $mysqli->query($sql);
-				//Se inserta los valores de la tablas
-				$sql = "INSERT INTO existencia_final (id_articulo,cantidad,mes) 
-				SELECT idarticulo, stock,'".$mes."' from articulo;";
-				$resultado = $mysqli->query($sql);
-				//Se inserta en la tabla de inicio los productos iniciales
-				if ($fecha='2017-12-01') {
-					$sql = "DELETE FROM existencia_inicial WHERE mes = ".$mes.";";
-					$resultado = $mysqli->query($sql);
-					//Se inserta los valores de la tablas
-					$sql = "INSERT INTO existencia_inicial (id_articulo,cantidad,mes) 
-					SELECT idarticulo, stock,'".$mes."' from articulo;";
-					$resultado = $mysqli->query($sql);
-				}
-			break;
-		
-	}
+
 
 	
 	

@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Listado de Proveedores <a href="proveedor/create"><button class="btn btn-success">Nuevo Proveedor</button></a></h3>
+		<h3>Listado de Proveedores <a href="almacen-proveedor-crear"><button class="btn btn-success">Nuevo Proveedor</button></a></h3>
 		@include('compras.proveedor.search')
 	</div>
 </div>

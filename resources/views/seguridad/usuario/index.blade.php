@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Listado de usuarios <a href="usuario/create"><button class="btn btn-success">Nueva Usuario</button></a></h3>
+		<h3>Listado de usuarios <a href="seguridad-usuario-crear"><button class="btn btn-success">Nueva Usuario</button></a></h3>
 		@include('seguridad.usuario.search')
 	</div>
 </div>

@@ -13,7 +13,7 @@
 			</div>
 			@endif
 
-			{!!Form::model($articulo,['method'=>'PATCH','route'=>['almacen.articulo.update',$articulo->idarticulo],'files'=>'true'])!!}
+			{!!Form::model($articulo,['method'=>'PATCH','route'=>['seguridad-usuario-update',$articulo->idarticulo],'files'=>'true'])!!}
             {{Form::token()}}
      <div class="row">
     	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

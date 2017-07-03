@@ -12,6 +12,7 @@ Route::get('almacen-categoria-crear', 'CategoriaController@create');
 Route::get('almacen-categoria-editar',['uses'=> 'CategoriaController@edit', 'as'=> 'almacen-editar.index']);
 Route::get('almacen-categoria-borrar', 'CategoriaController@destroy');
 Route::post('almacen-categoria-store', 'CategoriaController@store');
+Route::patch('almacen-categoria-update', 'CategoriaController@update');
 
 //Route::resource('almacen/categoria','CategoriaController');
 
@@ -19,8 +20,9 @@ Route::post('almacen-categoria-store', 'CategoriaController@store');
 //Route::resource('almacen/articulo','ArticuloController');
 Route::get('almacen-articulo', 'ArticuloController@index');
 Route::get('almacen-articulo-crear', 'ArticuloController@create');
-Route::get('almacen-articulo-editar', 'ArticuloController@edit');
-Route::get('almacen-articulo-borrar', 'ArticuloController@destroy');
+Route::get('almacen-articulo-editar/{id}', 'ArticuloController@edit');
+Route::get('almacen-articulo-borrar/{id}', 'ArticuloController@destroy');
+Route::patch('almacen-articulo-update', 'ArticuloController@update');
 
 //ruta de cliente
 //Route::resource('ventas/cliente','ClienteController');
@@ -63,7 +65,11 @@ Route::get('reporte-kardex', 'ReporteController@index');
 
 //Route::resource('seguridad/usuario','UsuarioController');
 Route::get('seguridad-usuario', 'UsuarioController@index');
-
+Route::get('seguridad-usuario-crear', 'UsuarioController@create');
+Route::get('seguridad-usuario-editar/{id}', 'UsuarioController@edit');
+Route::delete('seguridad-usuario-borrar/{id}', 'UsuarioController@destroy');
+Route::post('seguridad-usuario-store', 'UsuarioController@store');
+Route::patch('seguridad-usuario-update/{id}', 'UsuarioController@update');
 
 //ruta de hom de la apliaccion
 Route::get('/home', 'HomeController@index');

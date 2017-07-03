@@ -42,7 +42,7 @@ class UsuarioController extends Controller
         $usuario->email=$request->get('email');
         $usuario->password=bcrypt($request->get('password'));
         $usuario->save();
-        return Redirect::to('seguridad/usuario');
+        return Redirect::to('seguridad-usuario');
     }
 
     public function edit($id)
@@ -57,12 +57,12 @@ class UsuarioController extends Controller
         $usuario->email=$request->get('email');
         $usuario->password=bcrypt($request->get('password'));
         $usuario->update();
-        return Redirect::to('seguridad/usuario');
+        return Redirect::to('seguridad-usuario');
     }
 
     public function destroy($id)
     {
         $usuario = DB::table('users')->where('id', '=', $id)->delete();
-        return Redirect::to('seguridad/usuario');
+        return Redirect::to('seguridad-usuario');
     }
 }

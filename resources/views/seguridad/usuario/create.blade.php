@@ -13,7 +13,7 @@
 			</div>
 			@endif
 
-			{!!Form::open(array('url'=>'seguridad/usuario','method'=>'POST','autocomplete'=>'off'))!!}
+			{!!Form::open(array('url'=>'seguridad-usuario-store','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
             
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

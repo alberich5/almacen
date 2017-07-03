@@ -13,7 +13,7 @@
 			</div>
 			@endif
 
-			{!!Form::model($usuario,['method'=>'PATCH','route'=>['seguridad.usuario.update',$usuario->id]])!!}
+			{!!Form::model($usuario,['method'=>'PATCH','route'=>['seguridad-usuario-update',$usuario->id]])!!}
             {{Form::token()}}
             
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

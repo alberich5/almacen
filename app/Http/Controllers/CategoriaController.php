@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Omar\Http\Requests;
 use Omar\Categoria;
+use Omar\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use Omar\Http\Requests\CategoriaFormRequest;
 use DB;
 
@@ -48,6 +50,13 @@ class CategoriaController extends Controller
         $categoria->descripcion=strtoupper($request->get('descripcion'));
         $categoria->condicion='1';
         $categoria->save();
+
+        //guardo el log de actividad
+         $log=new Log;
+          $log->id_user=Auth::user()->id;
+          $log->tipo='Entrada_Categoria';
+          $log->save();
+
         return Redirect::to('almacen/categoria');
 
     }

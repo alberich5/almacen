@@ -184,13 +184,7 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
-        </div>
-        <strong>Copyright &copy; 2017 <a href="">Desarrollado por Omar Zarate</a>.</strong> Todos los derechos reservados.
-      </footer>
-
+      
       
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>

@@ -8,8 +8,10 @@ use Omar\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 use Omar\Http\Requests\ArticuloFormRequest;
 use Omar\Articulo;
+use Omar\Log;
 use DB;
 
 class ArticuloController extends Controller
@@ -66,6 +68,14 @@ class ArticuloController extends Controller
         }
 
         $articulo->save();
+
+        //guardo el log de actividad
+         $log=new Log;
+          $log->id_user=Auth::user()->id;
+          $log->tipo='Entrada_Articulo';
+          $log->save();
+
+
         return Redirect::to('almacen/articulo');
 
     }

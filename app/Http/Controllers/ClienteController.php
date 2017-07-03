@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Omar\Http\Requests;
 use Omar\Persona;
+use Omar\Log;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 use Omar\Http\Requests\PersonaFormRequest;
 use DB;
 
@@ -52,6 +54,11 @@ class ClienteController extends Controller
         $persona->telefono=$request->get('telefono');
         $persona->email=$request->get('email');        
         $persona->save();
+         //guardo el log de actividad
+         $log=new Log;
+          $log->id_user=Auth::user()->id;
+          $log->tipo='Entrada_Categoria';
+          $log->save();
         return Redirect::to('ventas/cliente');
 
     }

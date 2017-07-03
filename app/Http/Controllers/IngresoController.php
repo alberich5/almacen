@@ -8,8 +8,10 @@ use Omar\Http\Requests;
 
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 use Omar\Http\Requests\IngresoFormRequest;
 use Omar\Ingreso;
+use Omar\Log;
 use Omar\DetalleIngreso;
 use DB;
 
@@ -89,7 +91,19 @@ class IngresoController extends Controller
 	             $detalle->precio_compra= $precio_compra[$cont];
                  $detalle->precio_venta= $precio_compra[$cont];
 	             $detalle->save();
+
+
+                 //guardo el log de actividad
+                    $log=new Log;
+                    $log->id_user=Auth::user()->id;
+                    $log->id_articulo=$idarticulo[$cont];
+                    $log->tipo='Ingreso_Articulo';
+                    $log->save();
+
+                 
 	             $cont=$cont+1;
+
+                 
                             
 	         }
 

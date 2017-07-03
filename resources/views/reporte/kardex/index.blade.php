@@ -15,18 +15,7 @@
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		<form action="{{asset('php/excel/kardes.php')}}" method="get" accept-charset="utf-8">
 				{!! Form::label('kardes del mes:') !!}
-	    		{!! Form::select('mes', ['ENERO' => 'ENERO',
-	    									 'FEBRERO' => 'FEBRERO',
-	    									 'ḾARZO' => 'ḾARZO',
-	    									  'ABRIL' => 'ABRIL',
-	    									  'MAYO' => 'MAYO',
-	    									  'JUNIO' => 'JUNIO',
-	    									  'JULIO' => 'JULIO',
-	    									  'AGOSTO' => 'AGOSTO',
-	    									  'SEPTIEMBRE' => 'SEPTIEMBRE',
-	    									  'OCTUBRE' => 'OCTUBRE',
-	    									  'NOVIEMBRE' => 'NOVIEMBRE',
-	    									 'DICIEMBRE' => 'DICIEMBRE'],null,['class'=>'form-control']) !!}
+	    		{!! Form::select('mes', ['JULIO' => 'JUNIO'],null,['class'=>'form-control']) !!}
 				<input type="submit" name="" value="Descargar" class="btn btn-primary">
 				
 		</form>	

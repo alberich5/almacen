@@ -28,9 +28,11 @@ Route::patch('almacen-articulo-update', 'ArticuloController@update');
 //Route::resource('ventas/cliente','ClienteController');
 Route::get('almacen-cliente', 'ClienteController@index');
 Route::get('almacen-cliente-crear', 'ClienteController@create');
-Route::get('almacen-cliente-editar', 'ClienteController@edit');
+Route::get('almacen-cliente-editar/{id}', 'ClienteController@edit');
 Route::get('almacen-cliente-borrar', 'ClienteController@destroy');
 Route::post('almacen-cliente-store', 'ClienteController@store');
+Route::patch('almacen-cliente-update/{id}',['uses'=> 'ClienteController@update', 'as'=> 'almacen-cliente-update']);
+
 
 //ruta del proveedor
 //Route::resource('compras/proveedor','ProveedorController');
@@ -69,7 +71,7 @@ Route::get('seguridad-usuario-crear', 'UsuarioController@create');
 Route::get('seguridad-usuario-editar/{id}', 'UsuarioController@edit');
 Route::delete('seguridad-usuario-borrar/{id}', 'UsuarioController@destroy');
 Route::post('seguridad-usuario-store', 'UsuarioController@store');
-Route::patch('seguridad-usuario-update/{id}', 'UsuarioController@update');
+Route::patch('seguridad-usuario-update',['uses'=> 'UsuarioController@update', 'as'=> 'seguridad-usuario-update']);
 
 //ruta de hom de la apliaccion
 Route::get('/home', 'HomeController@index');

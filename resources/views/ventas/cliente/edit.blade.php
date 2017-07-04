@@ -13,7 +13,7 @@
 			</div>
 			@endif
 
-			{!!Form::model($persona,['method'=>'PATCH','route'=>['ventas.cliente.update',$persona->idpersona]])!!}
+			{!!Form::model($persona,['method'=>'PATCH','route'=>['almacen-cliente-update',$persona->idpersona]])!!}
             {{Form::token()}}
      <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

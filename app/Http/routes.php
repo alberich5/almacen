@@ -49,7 +49,7 @@ Route::patch('almacen-proveedor-update/{id}',['uses'=> 'ProveedorController@upda
 //Route::resource('compras/ingreso','IngresoController');
 Route::get('almacen-ingreso', 'IngresoController@index');
 Route::get('almacen-ingreso-crear', 'IngresoController@create');
-Route::get('almacen-ingreso-mostrar', 'IngresoController@show');
+Route::get('almacen-ingreso-mostrar/{id}', 'IngresoController@show');
 Route::get('almacen-ingreso-editar', 'IngresoController@edit');
 Route::delete('almacen-ingreso-borrar', 'IngresoController@destroy');
 Route::post('almacen-ingreso-store', 'IngresoController@store');

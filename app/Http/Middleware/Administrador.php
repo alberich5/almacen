@@ -1,6 +1,7 @@
 <?php
 
 namespace Omar\Http\Middleware;
+use Illuminate\Contracts\Auth\Guard;
 use Omar\User;
 use Omar\UsuarioRol;
 use Closure;
@@ -15,22 +16,25 @@ class Administrador
      * @param  \Closure  $next
      * @return mixed
      */
+
+    public function __construct(Guard $auth)
+    {
+        $this->auth=$auth;
+    }
+
     public function handle($request, Closure $next)
     {
-        $idUsuario=$this->auth->user();
-        $rol=UsuarioRol::where('usuario_id', $idUsuario->id)
-               ->first();
-
-               //aqui checamos que tipo de usuario devuelve la consulta para ser redirigido a su propia ruta
-        switch ($rol->rol_id) {
-            case '1':
-                return redirect()->to('recursos-humanos')->with('redirectPath', '/recursos-humanos');
-                break;
+       switch ($this->auth->user()->idrol) {
+           case '1':
+               # Administrador
+                #return  redirect()->to('admin');
+               break;
             case '2':
-                return redirect()->to('cobranzas')->with('redirectPath', '/cobranzas'); 
-            break;
-        }
-
-        return $next($request);
+               # Responsable de agregar productos
+                return  redirect()->to('responsable');
+               break;
+           
+           
+       }
     }
 }

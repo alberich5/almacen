@@ -24,17 +24,6 @@ class Administrador
 
     public function handle($request, Closure $next)
     {
-       switch ($this->auth->user()->idrol) {
-           case '1':
-               # Administrador
-                #return  redirect()->to('admin');
-               break;
-            case '2':
-               # Responsable de agregar productos
-                return  redirect()->to('responsable');
-               break;
-           
-           
-       }
+       dd("hola desde el Middleware Administrador");
     }
 }

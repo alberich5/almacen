@@ -5,6 +5,9 @@ Route::get('/', function () {
 	return view('auth/login');
 });
 
+
+
+
 //ruta de categoria
 Route::get('almacen-categoria', 'CategoriaController@index');
 Route::get('almacen-categoria-crear', 'CategoriaController@create');

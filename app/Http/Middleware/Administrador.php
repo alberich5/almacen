@@ -5,6 +5,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Omar\User;
 use Omar\UsuarioRol;
 use Closure;
+use Session;
 
 
 class Administrador
@@ -24,6 +25,7 @@ class Administrador
 
     public function handle($request, Closure $next)
     {
-       dd("hola desde el Middleware Administrador");
+      $id=Auth::user()->idrol;
+        dd($id);
     }
 }

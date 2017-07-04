@@ -20,18 +20,8 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
 
-            switch ($this->auth->user()->idrol) {
-           case '1':
-               # Administrador
-                return  redirect()->to('admin');
-               break;
-            case '2':
-               # Responsable de agregar productos
-                return  redirect()->to('responsable');
-               break;
-           
-            }
-         return redirect('/admin');
+            
+         return redirect('/almacen-venta');
         }
 
         return $next($request);

@@ -6,6 +6,10 @@ Route::get('/', function () {
 });
 
 
+Route::group(['middleware'=>['auth','admin'],'prefix'=>'administrador'],function()
+{
+	 Route::get('reporte-kardex', 'ReporteController@index');
+});
 
 
 //ruta de categoria
@@ -68,7 +72,7 @@ Route::post('almacen-venta-store', 'VentaController@store');
 
 //ruta de venta
 //Route::resource('reporte/kardex','ReporteController');
-Route::get('reporte-kardex', 'ReporteController@index');
+ Route::get('reporte-kardex', 'ReporteController@index');
 
 //Route::resource('seguridad/usuario','UsuarioController');
 Route::get('seguridad-usuario', 'UsuarioController@index');

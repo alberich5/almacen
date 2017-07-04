@@ -80,7 +80,7 @@ class CategoriaController extends Controller
         $categoria->nombre=$request->get('nombre');
         $categoria->descripcion=$request->get('descripcion');
         $categoria->update();
-        return Redirect::to('almacen/categoria');
+        return Redirect::to('almacen-categoria');
     }
 
     //funcion para eliminar una categoria

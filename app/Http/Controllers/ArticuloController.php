@@ -76,7 +76,7 @@ class ArticuloController extends Controller
           $log->save();
 
 
-        return Redirect::to('almacen/articulo');
+        return Redirect::to('almacen-articulo');
 
     }
 
@@ -115,7 +115,7 @@ class ArticuloController extends Controller
         }
 
          $articulo->update();
-         return Redirect::to('almacen/articulo');
+         return Redirect::to('almacen-articulo');
     }
 
     //funcion para eliminar cada articulo
@@ -124,6 +124,6 @@ class ArticuloController extends Controller
         $articulo=Articulo::findOrFail($id);
         $articulo->Estado='Inactivo';
         $articulo->update();
-         return Redirect::to('almacen/articulo');
+         return Redirect::to('almacen-articulo');
     }
 }

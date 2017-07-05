@@ -29,7 +29,7 @@ class Responsable
            case '1':
                # Administrador
                 #return  redirect()->to('admin');
-                return redirect()->to('admin')->with('redirectPath', '/');
+                return redirect()->to('/')->with('redirectPath', '/');
                break;
             case '2':
                # Responsable de agregar productos

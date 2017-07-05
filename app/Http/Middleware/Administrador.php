@@ -17,7 +17,8 @@ class Administrador
      * @param  \Closure  $next
      * @return mixed
      */
-
+    protected $auth;
+    protected $redirectPath;
     public function __construct(Guard $auth)
     {
         $this->auth=$auth;
@@ -25,7 +26,18 @@ class Administrador
 
     public function handle($request, Closure $next)
     {
-      $id=Auth::user()->idrol;
-        dd($id);
+       switch ($this->auth->user()->idrol) {
+           case '1':
+               # Administrador
+                #return  redirect()->to('admin');
+               break;
+            case '2':
+               # Responsable de agregar productos
+                #return  redirect()->to('responsable');
+                 return redirect()->to('responsable')->with('redirectPath', '/');
+               break;
+           
+       }
+       return $next($request);
     }
 }

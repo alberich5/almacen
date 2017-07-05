@@ -41,6 +41,12 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
+    public function loginUsername()
+    {
+        return property_exists($this, 'username') ? $this->username : 'name';
+    }
+
+
     /**
      * Get a validator for an incoming registration request.
      *

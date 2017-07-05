@@ -40,7 +40,7 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
-
+    //metodo para cambiar el incio de login atra vez de nombre de usuario
     public function loginUsername()
     {
         return property_exists($this, 'username') ? $this->username : 'name';

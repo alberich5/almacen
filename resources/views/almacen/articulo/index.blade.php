@@ -12,7 +12,7 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
+					<th>Fecha</th>
 					<th>Nombre</th>
 					<th>Modelo</th>
 					<th>Categoria</th>
@@ -25,7 +25,7 @@
 				</thead>
                @foreach ($articulos as $art)
 				<tr>
-					<td>{{ $art->idarticulo}}</td>
+					<td>{{ $art->fecha}}</td>
 					<td>{{ $art->nombre}}</td>
 					<td>{{ $art->codigo}}</td>
 					<td>{{ $art->categoria}}</td>

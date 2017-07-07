@@ -39,7 +39,9 @@ class VentaController extends Controller
             ->orderBy('v.idventa','desc')
             ->groupBy('v.idventa','v.fecha_hora','p.nombre','v.tipo_comprobante','v.serie_comprobante','v.num_comprobante','v.impuesto','v.estado')
             ->paginate(7);
-            return view('ventas.venta.index',["ventas"=>$ventas,"searchText"=>$query]);
+
+             $final=DB::table('articulo')->where('stock','<=','2')->get();
+            return view('ventas.venta.index',["ventas"=>$ventas,"searchText"=>$query,'final'=>$final]);
 
         }
     }

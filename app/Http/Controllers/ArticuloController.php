@@ -36,7 +36,10 @@ class ArticuloController extends Controller
             ->orwhere('a.codigo','LIKE','%'.$query.'%')
             ->orderBy('a.idarticulo','desc')
             ->paginate(7);
-            return view('almacen.articulo.index',["articulos"=>$articulos,"searchText"=>$query]);
+
+            $final=DB::table('articulo')->where('stock','<=','2')->get();
+
+            return view('almacen.articulo.index',["articulos"=>$articulos,"searchText"=>$query,"final"=>$final]);
         }
     }
     //Funcion para la vista de crear un nuevo articulo

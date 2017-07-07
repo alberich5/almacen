@@ -1,6 +1,7 @@
 @extends ('layouts.admin')
 @section ('contenido')
 <div class="row">
+
 	@foreach ($final as $fin)
 		<span class="label label-danger">{{ $fin->nombre}}</span>
 	@endforeach

@@ -35,7 +35,9 @@
 					<td>{{ $ing->estado}}</td>
 					<td>
 						<a href="{{URL::action('IngresoController@show',$ing->idingreso)}}"><button class="btn btn-primary">Detalle</button></a>
+					@if (Auth::user()->name == 'admin')
                          <a href="" data-target="#modal-delete-{{$ing->idingreso}}" data-toggle="modal"><button class="btn btn-danger">Cancelar</button></a>
+                    @endif
 					</td>
 				</tr>
 				@include('compras.ingreso.modal')

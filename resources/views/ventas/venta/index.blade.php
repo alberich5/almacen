@@ -40,7 +40,9 @@
 					<td>{{ $ven->estado}}</td>
 					<td>
 						<a href="{{URL::action('VentaController@show',$ven->idventa)}}"><button class="btn btn-primary">Detalle</button></a>
+						@if (Auth::user()->name == 'admin')
                          <a href="" data-target="#modal-delete-{{$ven->idventa}}" data-toggle="modal"><button class="btn btn-danger">Cancelar</button></a>
+                        @endif
 					</td>
 				</tr>
 				@include('ventas.venta.modal')

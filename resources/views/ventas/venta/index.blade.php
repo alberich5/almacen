@@ -3,7 +3,7 @@
 <div class="row">
 
 	@foreach ($final as $fin)
-		<span class="label label-success">{{ $fin->nombre}} =>{{ $fin->stock}}</span>
+		<span class="label label-success">{{ $fin->nombre}} {{ $fin->stock}}</span>
 	@endforeach
 </div>
 <div class="row">

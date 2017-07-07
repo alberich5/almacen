@@ -29,10 +29,10 @@ return [
     |
     */
 
-    'lifetime' => 120,
+    'lifetime' => 30,
     
     //Estabecer cerrar sesion cuando cierre el navegador
-    'expire_on_close' => false,
+    'expire_on_close' => true,
 
     /*
     |--------------------------------------------------------------------------

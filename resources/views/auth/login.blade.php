@@ -42,7 +42,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Recordar
+                                        
                                     </label>
                                 </div>
                             </div>
@@ -54,7 +54,6 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Acceder
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Olvidaste tu contraseña</a>
                             </div>
                         </div>
                     </form>

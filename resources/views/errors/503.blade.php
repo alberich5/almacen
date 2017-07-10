@@ -41,7 +41,7 @@
 
         jQuery(document).ready(function() {         
         // cowntdown function. Set the date by modifying the date in next line (June 1, 2012 00:00:00):
-            var austDay = new Date("June 30, 2017 10:00:00");
+            var austDay = new Date("July 12, 2017 10:00:00");
                 
                 $('#countdown').countdown({
                     until: austDay, 

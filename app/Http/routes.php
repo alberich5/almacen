@@ -25,7 +25,11 @@ Route::delete('almacen-articulo-borrar/{id}', 'ArticuloController@destroy');
 Route::patch('almacen-articulo-update', 'ArticuloController@update');
 //Route::post('almacen-articulo-store', 'ArticuloController@store');
 Route::post('almacen-articulo-store',['uses'=> 'ArticuloController@store', 'as'=> 'almacen-articulo-store']);
-
+//rutas de refaciones de productos
+Route::get('almacen-refaccion', 'RefaccionesController@index');
+Route::get('almacen-refaccion-crear', 'RefaccionesController@create');
+Route::get('almacen-refaccion-editar/{id}', 'RefaccionesController@edit');
+Route::post('almacen-refaccion-store',['uses'=> 'RefaccionesController@store', 'as'=> 'almacen-refaccion-store']);
 //ruta de cliente
 //Route::resource('ventas/cliente','ClienteController');
 Route::get('almacen-cliente', 'ClienteController@index');

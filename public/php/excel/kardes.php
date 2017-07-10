@@ -33,8 +33,8 @@
 	INNER JOIN existencia_final as fi on fi.id_articulo=a.idarticulo
 	LEFT JOIN detalle_venta as salida on a.idarticulo=salida.idarticulo
 	LEFT JOIN detalle_ingreso as ingreso on a.idarticulo=ingreso.idarticulo
-    WHERE DATE(ex.fecha) >= '01-06-2017' and  DATE(fi.fecha) >= '30-06-2017'
-    or DATE(ingreso.fecha) >= '01-06-2017' or DATE(ingreso.fecha) <= '30-06-2017'
+    WHERE DATE(ex.fecha) >= '01-06-2017' and  DATE(fi.fecha) >= '30-07-2017'
+    or DATE(ingreso.fecha) >= '01-06-2017' or DATE(ingreso.fecha) <= '30-07-2017'
     GROUP BY a.idarticulo
 	;";
 	$resultado = $mysqli->query($sql);

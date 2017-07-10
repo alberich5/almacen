@@ -95,6 +95,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('/almacen-articulo') }}"><i class="fa fa-circle-o"></i> Artículos</a></li>
+                <li><a href="{{ url('/almacen-refaccion') }}"><i class="fa fa-circle-o"></i>Refaciones</a></li>
                 <li><a href="{{ url('/almacen-categoria') }}"><i class="fa fa-circle-o"></i> Categorías</a></li>
               </ul>
             </li>

@@ -5,7 +5,6 @@
 
 	$mes = date("m");
 	$fecha = date("Y-m-d");
-	echo $fecha;
 	//el volcado de informacion hacia la tabla de existencia final
 	$sql = "DELETE FROM existencia_final WHERE mes = ".$mes.";";
 				$resultado = $mysqli->query($sql);
@@ -158,7 +157,6 @@
 	
 	//Recorremos los resultados de la consulta y los imprimimos
 	while($rows = $resultado->fetch_assoc()){
-		
 		$objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['FechaIngre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['nombre']);
 		$objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['unidad']);

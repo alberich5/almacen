@@ -103,7 +103,7 @@
     )
 	));
 	
-	$objPHPExcel->getActiveSheet()->getStyle('A1:H4')->applyFromArray($estiloTituloReporte);
+	$objPHPExcel->getActiveSheet()->getStyle('A1:D4')->applyFromArray($estiloTituloReporte);
 	$objPHPExcel->getActiveSheet()->getStyle('A6:D6')->applyFromArray($estiloTituloColumnas);
 	
 	$objPHPExcel->getActiveSheet()->setCellValue('B3', 'ENTRADAS DEL DIA '.$fecha.'');
@@ -134,7 +134,7 @@
 	
 	$fila = $fila-1;
 	
-	$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:H".$fila);
+	$objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A7:D".$fila);
 	
 	$filaGrafica = $fila+2;
 	

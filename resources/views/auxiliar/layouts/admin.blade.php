@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ALMACEN ADMINISTRADOR</title>
+    <title>ALMACEN</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -25,7 +25,7 @@
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
-      <header class="main-header" >
+      <header class="main-header">
 
         <!-- Logo -->
         <a href="{{ url('/almacen-venta') }}" class="logo">
@@ -36,7 +36,7 @@
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation" style="background: #59545b;">
+        <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Navegación</span>

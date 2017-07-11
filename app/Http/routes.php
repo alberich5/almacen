@@ -84,6 +84,7 @@ Route::get('/home', 'HomeController@index');
 
 
 //Rutas para el manejo de login y usuarios
+//Ruta de autenticacion
 Route::auth();
 
 

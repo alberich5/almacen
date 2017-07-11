@@ -31,14 +31,14 @@ class ProveedorController extends Controller
             ->where ('tipo_persona','=','Proveedor')
             ->orderBy('idpersona','desc')
             ->paginate(7);
-            return view('compras.proveedor.index',["personas"=>$personas,"searchText"=>$query]);
+            return view('administrador.compras.proveedor.index',["personas"=>$personas,"searchText"=>$query]);
         }
     }
 
     //Metodo para mostrar la vista de crear un proveedor
     public function create()
     {
-        return view("compras.proveedor.create");
+        return view("administrador.compras.proveedor.create");
     }
 
     //funcion que permite guaradar un proveedor
@@ -59,13 +59,13 @@ class ProveedorController extends Controller
     //funcion para mostrar todos los proveedores
     public function show($id)
     {
-        return view("compras.proveedor.show",["persona"=>Persona::findOrFail($id)]);
+        return view("administrador.compras.proveedor.show",["persona"=>Persona::findOrFail($id)]);
     }
 
     //funcion para editar cada proveedor
      public function edit($id)
     {
-        return view("compras.proveedor.edit",["persona"=>Persona::findOrFail($id)]);
+        return view("administrador.compras.proveedor.edit",["persona"=>Persona::findOrFail($id)]);
     }
 
     //funcion para actualizar la informacion de algun proveedor

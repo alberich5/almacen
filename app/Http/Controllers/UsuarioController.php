@@ -26,13 +26,13 @@ class UsuarioController extends Controller
             $usuarios=DB::table('users')->where('name','LIKE','%'.$query.'%')
             ->orderBy('id','desc')
             ->paginate(7);
-            return view('seguridad.usuario.index',["usuarios"=>$usuarios,"searchText"=>$query]);
+            return view('administrador.seguridad.usuario.index',["usuarios"=>$usuarios,"searchText"=>$query]);
         }
     }
 
     public function create()
     {
-        return view("seguridad.usuario.create");
+        return view("administrador.seguridad.usuario.create");
     }
 
     public function store (UsuarioFormRequest $request)
@@ -47,7 +47,7 @@ class UsuarioController extends Controller
 
     public function edit($id)
     {
-        return view("seguridad.usuario.edit",["usuario"=>User::findOrFail($id)]);
+        return view("administrador.seguridad.usuario.edit",["usuario"=>User::findOrFail($id)]);
     }
 
     public function update(UsuarioFormRequest $request,$id)

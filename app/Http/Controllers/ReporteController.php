@@ -11,6 +11,6 @@ class ReporteController extends Controller
      //funcion index
     public function index(Request $request)
     {
-        return view('reporte.kardex.index');
+        return view('administrador.reporte.kardex.index');
     }
 }

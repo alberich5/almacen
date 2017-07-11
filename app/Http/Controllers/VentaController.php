@@ -41,7 +41,7 @@ class VentaController extends Controller
             ->paginate(7);
 
              $final=DB::table('articulo')->where('stock','<=','2')->get();
-            return view('ventas.venta.index',["ventas"=>$ventas,"searchText"=>$query,'final'=>$final]);
+            return view('administrador.ventas.venta.index',["ventas"=>$ventas,"searchText"=>$query,'final'=>$final]);
 
         }
     }
@@ -57,7 +57,7 @@ class VentaController extends Controller
             ->where('art.stock','>','0')
             ->groupBy('articulo','art.idarticulo','art.stock')
             ->get();
-        return view("ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
+        return view("administrador.ventas.venta.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
 
     //funcion de ventas
@@ -127,7 +127,7 @@ class VentaController extends Controller
                  
              }
             $cadena .="total=".$conte;
-        return view("ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles,"cadena"=>$cadena]);
+        return view("administrador.ventas.venta.show",["venta"=>$venta,"detalles"=>$detalles,"cadena"=>$cadena]);
     }
 
     //funcion para eliminar las categorias

@@ -39,7 +39,7 @@ class ArticuloController extends Controller
 
             $final=DB::table('articulo')->where('stock','<=','2')->get();
 
-            return view('almacen.articulo.index',["articulos"=>$articulos,"searchText"=>$query,"final"=>$final]);
+            return view('administrador.almacen.articulo.index',["articulos"=>$articulos,"searchText"=>$query,"final"=>$final]);
         }
     }
     //Funcion para la vista de crear un nuevo articulo
@@ -47,7 +47,7 @@ class ArticuloController extends Controller
     {
     	$categorias=DB::table('categoria')->where('condicion','=','1')->get();
         //mostrar vista de crear
-        return view("almacen.articulo.create",["categorias"=>$categorias]);
+        return view("administrador.almacen.articulo.create",["categorias"=>$categorias]);
     }
     //funcion para insertar un nuevo articulo
     public function store (ArticuloFormRequest $request)
@@ -86,7 +86,7 @@ class ArticuloController extends Controller
     //funcion para mostrar todos los articulos
     public function show($id)
     {
-        return view("almacen.articulo.show",["articulo"=>Articulo::findOrFail($id)]);
+        return view("administrador.almacen.articulo.show",["articulo"=>Articulo::findOrFail($id)]);
     }
 
     //funciojn para editar cada articulo
@@ -95,7 +95,7 @@ class ArticuloController extends Controller
         $articulo=Articulo::findOrFail($id);
         $categorias=DB::table('categoria')->where('condicion','=','1')->get();
         //retornar la vista
-        return view("almacen.articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
+        return view("administrador.almacen.articulo.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
 
     }
 

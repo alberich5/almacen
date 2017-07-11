@@ -43,7 +43,7 @@ class IngresoController extends Controller
             ->paginate(7);
 
             
-            return view('compras.ingreso.index',["ingresos"=>$ingresos,"searchText"=>$query]);
+            return view('administrador.compras.ingreso.index',["ingresos"=>$ingresos,"searchText"=>$query]);
         }
     }
 
@@ -55,7 +55,7 @@ class IngresoController extends Controller
             ->select(DB::raw('CONCAT(art.codigo, " ",art.nombre) AS articulo'),'art.idarticulo')
             ->where('art.estado','=','Activo')
             ->get();
-        return view("compras.ingreso.create",["personas"=>$personas,"articulos"=>$articulos]);
+        return view("administrador.compras.ingreso.create",["personas"=>$personas,"articulos"=>$articulos]);
     }
 
     //funcion que permite guardar un ingreso
@@ -129,7 +129,7 @@ class IngresoController extends Controller
              ->select('a.nombre as articulo','d.cantidad','d.precio_compra','d.precio_venta')
              ->where('d.idingreso','=',$id)
              ->get();
-        return view("compras.ingreso.show",["ingreso"=>$ingreso,"detalles"=>$detalles]);
+        return view("administrador.compras.ingreso.show",["ingreso"=>$ingreso,"detalles"=>$detalles]);
     }
 
     //funcion para cancelar

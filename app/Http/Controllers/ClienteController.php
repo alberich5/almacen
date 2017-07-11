@@ -33,14 +33,14 @@ class ClienteController extends Controller
             ->where ('tipo_persona','=','Cliente')
             ->orderBy('idpersona','desc')
             ->paginate(7);
-            return view('ventas.cliente.index',["personas"=>$personas,"searchText"=>$query]);
+            return view('administrador.ventas.cliente.index',["personas"=>$personas,"searchText"=>$query]);
         }
     }
 
     //funcion para mostrar la vista para crear cliente
     public function create()
     {
-        return view("ventas.cliente.create");
+        return view("administrador.ventas.cliente.create");
     }
 
     //funcion para guardar un nuevo cliente
@@ -66,13 +66,13 @@ class ClienteController extends Controller
     //mostrar todos los clientes
     public function show($id)
     {
-        return view("ventas.cliente.show",["persona"=>Persona::findOrFail($id)]);
+        return view("administrador.ventas.cliente.show",["persona"=>Persona::findOrFail($id)]);
     }
 
     //Funcion para mostar la vista para editar clientes
     public function edit($id)
     {
-        return view("ventas.cliente.edit",["persona"=>Persona::findOrFail($id)]);
+        return view("administrador.ventas.cliente.edit",["persona"=>Persona::findOrFail($id)]);
     }
 
     //funcion para actualizar datos del cliente

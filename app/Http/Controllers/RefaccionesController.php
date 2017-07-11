@@ -39,7 +39,7 @@ class RefaccionesController extends Controller
 
             $final=DB::table('articulo')->where('stock','<=','2')->get();
 
-            return view('almacen.refaccion.index',["articulos"=>$articulos,"searchText"=>$query,"final"=>$final]);
+            return view('administrador.administrador.almacen.refaccion.index',["articulos"=>$articulos,"searchText"=>$query,"final"=>$final]);
         }
     }
     //Funcion para la vista de crear un nuevo articulo
@@ -48,7 +48,7 @@ class RefaccionesController extends Controller
         $personas=DB::table('persona')->where('tipo_persona','=','Cliente')->get();
     	$categorias=DB::table('categoria')->where('condicion','=','1')->get();
         //mostrar vista de crear
-        return view("almacen.refaccion.create",["categorias"=>$categorias,"personas"=>$personas]);
+        return view("administrador.administrador.almacen.refaccion.create",["categorias"=>$categorias,"personas"=>$personas]);
     }
     //funcion para insertar un nuevo articulo
     public function store (ArticuloFormRequest $request)
@@ -88,7 +88,7 @@ class RefaccionesController extends Controller
     //funcion para mostrar todos los articulos
     public function show($id)
     {
-        return view("almacen.refaccion.show",["articulo"=>Articulo::findOrFail($id)]);
+        return view("administrador.almacen.refaccion.show",["articulo"=>Articulo::findOrFail($id)]);
     }
 
     //funciojn para editar cada articulo
@@ -97,7 +97,7 @@ class RefaccionesController extends Controller
         $articulo=Articulo::findOrFail($id);
         $categorias=DB::table('categoria')->where('condicion','=','1')->get();
         //retornar la vista
-        return view("almacen.refaccion.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
+        return view("administrador.almacen.refaccion.edit",["articulo"=>$articulo,"categorias"=>$categorias]);
 
     }
 

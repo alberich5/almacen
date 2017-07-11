@@ -32,7 +32,7 @@ class CategoriaController extends Controller
             ->where ('condicion','=','1')
             ->orderBy('idcategoria','desc')
             ->paginate(7);
-            return view('almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
+            return view('administrador.almacen.categoria.index',["categorias"=>$categorias,"searchText"=>$query]);
         }
     }
 
@@ -40,7 +40,7 @@ class CategoriaController extends Controller
     public function create()
     {
         //mostrar vista de crear
-        return view("almacen.categoria.create");
+        return view("administrador.almacen.categoria.create");
     }
     public function store (CategoriaFormRequest $request)
     {
@@ -64,13 +64,13 @@ class CategoriaController extends Controller
     //funcion para mostrar las categorias
     public function show($id)
     {
-        return view("almacen.categoria.show",["categoria"=>Categoria::findOrFail($id)]);
+        return view("administrador.almacen.categoria.show",["categoria"=>Categoria::findOrFail($id)]);
     }
 
     //funcion para editar las categorias
     public function edit($id)
     {
-        return view("almacen.categoria.edit",["categoria"=>Categoria::findOrFail($id)]);
+        return view("administrador.almacen.categoria.edit",["categoria"=>Categoria::findOrFail($id)]);
     }
 
     //funcion para actualizar las categorias

@@ -14,6 +14,6 @@ class WelcomeTest extends TestCase
     public function testExample()
     {
         $this->assertTrue(true);
-	$this->visit('/')see('Bienvenido a Omar Zarate')
+	$this->visit('/')see('Bienvenido a la prueba de Omar Zarate')
     }
 }

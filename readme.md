@@ -8,3 +8,4 @@ Se creao un archivo llamado Administrador.php en los middleware para controlar e
 1 de junio se instalo dentro de la maquina un cliente de git llamado gitKracken
 crando parte de proyceto
 modificando el proyecto para que funcione perfecto
+Se realizo otro cambios con respecto al servidor para que jalara bien el proyecto

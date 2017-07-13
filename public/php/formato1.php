@@ -37,7 +37,7 @@ $templateWord->setValue('mes',$mes);
 $templateWord->setValue('ano',$ano);
 
 $tim =time();
-// --- Guardamos el documento
+// --- Guardamos el documentos en un  archivo descagable
 $templateWord->saveAs('mante/descarga'.$tim.'.docx');
 
 header("Content-Disposition: attachment; filename=descarga".$tim.".docx; charset=iso-8859-1");

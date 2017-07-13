@@ -8,7 +8,7 @@
                 <div class="panel-heading">Bienvenido a omar</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    Esta  es la aplicacion principal  que  anda corriendo sin problemas
                 </div>
             </div>
         </div>

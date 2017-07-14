@@ -9,3 +9,4 @@ Se creao un archivo llamado Administrador.php en los middleware para controlar e
 crando parte de proyceto
 modificando el proyecto para que funcione perfecto
 Se realizo otro cambios con respecto al servidor para que jalara bien el proyecto
+git init restor de la app
